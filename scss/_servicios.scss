@@ -1,0 +1,113 @@
+/* Servicios */
+
+.servicios-contenedor1 {
+  @include size(60%, 300px);
+}
+
+/****Fin Mobil****/
+
+/****Inicio Desktop****/
+
+@media screen and (min-width: 1024px) {
+  .servicios-grid {
+    display: grid;
+    grid-template-areas: "contenedor1 imagen1";
+    grid-template-columns: 5fr 7fr;
+
+    position: relative;
+    top: 50px;
+  }
+
+  .servicios-contenedor1 {
+    grid-area: contenedor1;
+  }
+}
+/****Fin Desktop****/
+
+/****Inicio Mobil****/
+
+.servicios-contenedor2__imagen1 {
+  display: block;
+  @include size(100%, 450px);
+}
+
+.servicios-contenedor2 {
+  position: relative;
+}
+
+$listas: (
+  vial: url(../Imagenes/train.svg),
+  math: url(../Imagenes/math-formula-16-filled.svg),
+  urbanismo: url(../Imagenes/crane.svg),
+  energia: url(../Imagenes/electricity.svg),
+  hidraulica: url(../Imagenes/water.svg),
+  reciclar: url(../Imagenes/recycle.svg),
+  casco: url(../Imagenes/helmet-safety.svg),
+);
+
+@each $lista, $vinieta in $listas {
+  .#{$lista} {
+    list-style-image: $vinieta;
+  }
+}
+
+/****Fin Mobil****/
+
+/****Inicio Desktop****/
+
+@media screen and (min-width: 1024px) {
+  .servicios-contenedor2 {
+    grid-area: imagen1;
+  }
+}
+
+/****Fin Desktop****/
+
+/****Inicio Mobil****/
+
+.servicios-contenedor2__imagen1 {
+  @include size(100%, 450px);
+  z-index: 20;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/****Fin Mobil****/
+
+/****Inicio Desktop****/
+
+@media screen and (min-width: 1024px) {
+  .servicios-contenedor2__imagen1 {
+    z-index: 20;
+    @include size(100%, 400px);
+    margin: auto;
+  }
+}
+/****Fin Desktop****/
+
+/****Inicio Mobil****/
+.servicios-contenedor3 {
+  height: 600px;
+  margin-top: 10px;
+}
+
+.servicios-contenedor3--display-flex {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  /* Servicios */
+
+  .servicios-contenedor3 {
+    position: relative;
+    top: 150px;
+
+    height: 500px;
+  }
+
+  .servicios-contenedor3--display-flex {
+    display: flex;
+    justify-content: space-around;
+  }
+}

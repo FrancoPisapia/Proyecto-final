@@ -1,0 +1,155 @@
+@import "_variables.scss";
+
+/****Inicio Mobile****/
+
+.obras__video {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.border1 {
+  border-bottom: 3px solid rgba(60, 60, 60, 0.5);
+  grid-area: border;
+}
+
+.border2 {
+  border-bottom: 3px solid rgba(60, 60, 60, 0.5);
+  grid-area: border;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/****Fin Mobile****/
+
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .border {
+    grid-area: border;
+  }
+}
+
+/****Fin Desktop****/
+
+/****Inicio Mobile****/
+
+.vision {
+  position: relative;
+  bottom: -20px;
+  height: 170px;
+
+  margin: 0px 10px 160px 0px;
+  width: 60%;
+}
+
+.clientes {
+  position: relative;
+  margin-top: 18px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.indicator2 {
+  bottom: -40px;
+}
+
+.clientes--positionSticky {
+  position: sticky;
+  top: 150px;
+
+  height: 40px;
+  background-color: $color-body;
+}
+
+.clientes__imagenes {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+
+  background-color: $color-letra-body;
+}
+
+.carousel-inner2 {
+  left: 25%;
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.obras {
+  position: relative;
+  bottom: 300px;
+}
+
+.obras__imagenes {
+  position: relative;
+}
+
+.obras__imagenes__imagen1 {
+  display: block;
+
+  position: absolute;
+  top: 770px;
+  z-index: 20;
+  right: 5%;
+
+  @include size(200px, 300px);
+}
+
+.obras__imagenes__imagen3 {
+  display: block;
+
+  position: absolute;
+  top: 10px;
+
+  @include size(100%, 700px);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.obras__imagenes__contenedor {
+  position: relative;
+
+  height: 350px;
+  width: 100%;
+  margin-top: 350px;
+  margin-bottom: 100px;
+}
+
+.clientes__imagenes__imagen4 {
+  display: block;
+
+  @include size(100%, 220px);
+}
+
+.clientes__imagenes__imagen5 {
+  @extend .clientes__imagenes__imagen4;
+}
+
+.clientes__imagenes__imagen8 {
+  display: block;
+}
+
+/****Fin Mobile****/
+
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  form {
+    height: 500px;
+  }
+
+  .clientes--positionSticky {
+    top: 150px;
+  }
+
+  .obras__imagenes__imagen1 {
+    right: 5%;
+  }
+
+  .obras__imagenes__contenedor {
+    position: relative;
+  }
+}
+
+/****Fin Desktop****/

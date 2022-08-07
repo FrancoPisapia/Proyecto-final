@@ -1,0 +1,80 @@
+@import "_header-fotter.scss";
+@import "_index.scss";
+@import "_nuestros-clientes.scss";
+@import "_servicios.scss";
+@import "_sobre-nosotros.scss";
+@import "_trabaja-con-nosotros.scss";
+@import "_trabajos-realizados.scss";
+@import "_contacto.scss";
+@import "_variables.scss";
+
+/* Global */
+* {
+  box-sizing: border-box;
+  zoom: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+/****Inicio Mobile****/
+
+$estilo-body: (
+  color: #000000,
+  grosor: bold,
+  tamanio: 20px,
+);
+
+body {
+  background-color: $color-body;
+  color: map-get($estilo-body, color);
+  font-family: "Work Sans", sans-serif;
+  font-weight: map-get($estilo-body, grosor);
+  font-size: map-get($estilo-body, tamanio);
+  overflow-x: hidden;
+}
+
+main {
+  grid-area: main;
+}
+
+.tituliLista {
+  font-family: "Lato", sans-serif;
+}
+
+.positionSticky {
+  position: sticky;
+  top: 205px;
+  height: 40px;
+  margin-bottom: 25px;
+
+  background-color: $color-body;
+}
+$iconos: (
+  contacto__mail: url(../Imagenes/mail-filled.svg),
+  publico: url(../Imagenes/government-fill.svg),
+  privado: url(../Imagenes/crane.svg),
+  estudios: url(../Imagenes/gear.svg),
+  construccion: url(../Imagenes/construction-worker-negative.svg),
+  auditoria: url(../Imagenes/i-documents-accepted.svg),
+);
+
+@each $icono, $imagen in $iconos {
+  .#{$icono} li {
+    list-style-image: $imagen;
+    font-family: "Raleway", sans-serif;
+  }
+}
+
+/****Fin Mobile****/
+
+/****Inicio Desktop****/
+
+@media screen and (min-width: 1024px) {
+  .positionSticky {
+    top: 160px;
+  }
+}
+
+/****Fin Desktop****/

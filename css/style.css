@@ -1,0 +1,667 @@
+/**** Inicio Mobile header****/
+.grid {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  /* grid-template-rows: 170px 850px auto; */ }
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  background-color: #3c3c3c;
+  margin: -20px -8px 0 -8px;
+  width: 110%; }
+
+.bg-light {
+  --bs-bg-opacity: 0;
+  background-color: #3c3c3c; }
+
+.navbar-light .navbar-brand {
+  color: #ffffff; }
+
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, 0.55);
+  border-color: #3c3c3c; }
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffff; }
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url(../Imagenes/menu-outlined.svg); }
+
+h1 {
+  color: #ffffff;
+  margin-left: 20px;
+  font-family: "Raleway", sans-serif;
+  text-align: center; }
+
+.logo img {
+  display: block;
+  height: 140px;
+  width: 200px; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.navegador {
+  display: flex;
+  flex-direction: inherit;
+  justify-items: inherit;
+  align-items: inherit;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+  background-color: #3c3c3c;
+  font-size: 14px;
+  color: #ffffff; }
+
+.navegador__lista {
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+  align-items: inherit;
+  list-style-type: none;
+  width: 100%;
+  margin-top: -25px;
+  padding: 25px; }
+  .navegador__lista li:hover {
+    background-color: gray;
+    transition: 0.1s ease; }
+
+.navbar > .container,
+.navbar > .container-fluid,
+.navbar > .container-lg,
+.navbar > .container-md,
+.navbar > .container-sm,
+.navbar > .container-xl,
+.navbar > .container-xxl {
+  justify-content: center; }
+
+/****Fin Header Mobile****/
+/****Inicio Header Desktop****/
+@media screen and (min-width: 1024px) {
+  img {
+    max-width: 100%; }
+  .grid {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: "header header header" "main main main" "footer footer footer";
+    grid-template-rows: 140px auto 160px; }
+  h1 {
+    text-align: left; }
+  /* .navbar-nav {
+        display: flex;
+        justify-content: space-evenly;
+      } */
+  header {
+    grid-area: header;
+    display: block;
+    flex-direction: row;
+    width: auto; }
+  .logo img {
+    position: relative;
+    height: 60px;
+    width: 80px; }
+  .navegador__lista {
+    flex-direction: row;
+    justify-content: space-around; } }
+
+/****Fin Header Desktop****/
+/**** Inicio Footer Mobile****/
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  margin: 0px -8px -10px -8px;
+  width: 100%;
+  padding-left: 10px;
+  background-color: #636363;
+  color: #ffffff;
+  width: 110%;
+  font-size: 15px;
+  z-index: 10; }
+
+.ir-arriba {
+  position: fixed;
+  bottom: 7px;
+  right: 5px;
+  z-index: 20;
+  color: black;
+  background-color: #636363; }
+
+.linksUtiles {
+  list-style-image: url(../Imagenes/admin-links.svg); }
+
+.contacto__mail {
+  list-style-image: url(../Imagenes/mail-filled.svg); }
+
+.contacto__linkedin {
+  list-style-image: url(../Imagenes/linkedin-box-fill.svg); }
+
+.contaco__ubicacion {
+  list-style-image: url(../Imagenes/google-maps.svg); }
+
+/**** Fin Footer Mobile****/
+/*** Inicio Footer Desktop***/
+@media screen and (min-width: 1024px) {
+  footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0px -20px -10px -10px;
+    padding: 20px;
+    width: 105%; } }
+
+/****Inicio Mobile****/
+.obras__video {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 20px; }
+
+.border1 {
+  border-bottom: 3px solid rgba(60, 60, 60, 0.5);
+  grid-area: border; }
+
+.border2 {
+  border-bottom: 3px solid rgba(60, 60, 60, 0.5);
+  grid-area: border;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+/****Fin Mobile****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .border {
+    grid-area: border; } }
+
+/****Fin Desktop****/
+/****Inicio Mobile****/
+.vision {
+  position: relative;
+  bottom: -20px;
+  height: 170px;
+  margin: 0px 10px 160px 0px;
+  width: 60%; }
+
+.clientes {
+  position: relative;
+  margin-top: 18px;
+  width: 100%;
+  margin-bottom: 20px; }
+
+.indicator2 {
+  bottom: -40px; }
+
+.clientes--positionSticky {
+  position: sticky;
+  top: 150px;
+  height: 40px;
+  background-color: #a5bab6; }
+
+.clientes__imagenes {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  background-color: #ffffff; }
+
+.carousel-inner2 {
+  left: 25%;
+  position: relative;
+  width: 50%;
+  overflow: hidden; }
+
+.obras {
+  position: relative;
+  bottom: 300px; }
+
+.obras__imagenes {
+  position: relative; }
+
+.obras__imagenes__imagen1 {
+  display: block;
+  position: absolute;
+  top: 770px;
+  z-index: 20;
+  right: 5%;
+  height: 300px;
+  width: 200px; }
+
+.obras__imagenes__imagen3 {
+  display: block;
+  position: absolute;
+  top: 10px;
+  height: 700px;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 20px; }
+
+.obras__imagenes__contenedor {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  margin-top: 350px;
+  margin-bottom: 100px; }
+
+.clientes__imagenes__imagen4, .clientes__imagenes__imagen5 {
+  display: block;
+  height: 220px;
+  width: 100%; }
+
+.clientes__imagenes__imagen8 {
+  display: block; }
+
+/****Fin Mobile****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  form {
+    height: 500px; }
+  .clientes--positionSticky {
+    top: 150px; }
+  .obras__imagenes__imagen1 {
+    right: 5%; }
+  .obras__imagenes__contenedor {
+    position: relative; } }
+
+/****Fin Desktop****/
+/* Nuestros clientes */
+/****Inicio Mobil****/
+.clientes__imagenes--wrap {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; }
+
+.nuestros-clientes-contenedor1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+/* Servicios */
+.servicios-contenedor1 {
+  height: 300px;
+  width: 60%; }
+
+/****Fin Mobil****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .servicios-grid {
+    display: grid;
+    grid-template-areas: "contenedor1 imagen1";
+    grid-template-columns: 5fr 7fr;
+    position: relative;
+    top: 50px; }
+  .servicios-contenedor1 {
+    grid-area: contenedor1; } }
+
+/****Fin Desktop****/
+/****Inicio Mobil****/
+.servicios-contenedor2__imagen1 {
+  display: block;
+  height: 450px;
+  width: 100%; }
+
+.servicios-contenedor2 {
+  position: relative; }
+
+.vial {
+  list-style-image: url(../Imagenes/train.svg); }
+
+.math {
+  list-style-image: url(../Imagenes/math-formula-16-filled.svg); }
+
+.urbanismo {
+  list-style-image: url(../Imagenes/crane.svg); }
+
+.energia {
+  list-style-image: url(../Imagenes/electricity.svg); }
+
+.hidraulica {
+  list-style-image: url(../Imagenes/water.svg); }
+
+.reciclar {
+  list-style-image: url(../Imagenes/recycle.svg); }
+
+.casco {
+  list-style-image: url(../Imagenes/helmet-safety.svg); }
+
+/****Fin Mobil****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .servicios-contenedor2 {
+    grid-area: imagen1; } }
+
+/****Fin Desktop****/
+/****Inicio Mobil****/
+.servicios-contenedor2__imagen1 {
+  height: 450px;
+  width: 100%;
+  z-index: 20;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+/****Fin Mobil****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .servicios-contenedor2__imagen1 {
+    z-index: 20;
+    height: 400px;
+    width: 100%;
+    margin: auto; } }
+
+/****Fin Desktop****/
+/****Inicio Mobil****/
+.servicios-contenedor3 {
+  height: 600px;
+  margin-top: 10px; }
+
+.servicios-contenedor3--display-flex {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px; }
+
+@media screen and (min-width: 1024px) {
+  /* Servicios */
+  .servicios-contenedor3 {
+    position: relative;
+    top: 150px;
+    height: 500px; }
+  .servicios-contenedor3--display-flex {
+    display: flex;
+    justify-content: space-around; } }
+
+/****Inicio Mobile****/
+/* Sobre nosotros */
+.sobre-nosotros--grid2 {
+  display: grid;
+  grid-template-areas: "sobreNosotros" "imagen1" "sobre-nosotros-contenedor2" "border" "contenedor3";
+  gap: 20px; }
+
+/****Fin Mobile****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .sobre-nosotros--grid2 {
+    grid-template-areas: "sobreNosotros imagen1" "border border" "sobre-nosotros-contenedor2 contenedor3";
+    grid-template-columns: 50% 50%; } }
+
+/****Fin Desktop****/
+/****Inicio Mobil****/
+.sobre-nosotros-contenedor2 {
+  grid-area: sobre-nosotros-contenedor2;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 20px; }
+
+/****Fin Mobil****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .sobre-nosotros-contenedor2 {
+    grid-area: sobre-nosotros-contenedor2; }
+  .margin {
+    margin-top: 26.25px; } }
+
+/****Fin Desktop****/
+/****Inicio Mobil****/
+.contenedor3 {
+  grid-area: contenedor3;
+  margin-left: 10px; }
+
+.imagen1 {
+  grid-area: imagen1;
+  margin: 75px 25px 0 0; }
+
+/****Fin Desktop****/
+/* Trabaja con nosotros */
+.trabaja-con-nosotros-contenedor1 {
+  height: 700px;
+  padding-top: 50px; }
+
+form {
+  height: 500px; }
+
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  form {
+    height: 500px; }
+  .clientes--positionSticky {
+    top: 150px; }
+  .obras__imagenes__imagen1 {
+    right: 5%; }
+  .obras__imagenes__contenedor {
+    position: relative; } }
+
+/* Trabajos realizados */
+.trabajos-realizados-contenedor1 {
+  width: 100%; }
+
+.contenedor2-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 30px; }
+
+.tarjeta {
+  height: 350px;
+  width: 300px;
+  background-color: #a5bab6;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.5s ease; }
+
+.adelante, .atras {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.atras {
+  transform: rotateY(180deg);
+  background-color: rgba(165, 186, 182, 0.8);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.tarjeta-flex:hover .tarjeta {
+  transform: rotateY(180deg); }
+
+.adelante1 {
+  height: 100%;
+  width: 100%;
+  background-size: cover; }
+
+.adelante2 {
+  height: 100%;
+  width: 100%;
+  background-size: cover; }
+
+.adelante3 {
+  height: 100%;
+  width: 100%;
+  background-size: cover; }
+
+.adelante4 {
+  height: 100%;
+  width: 100%;
+  background-size: cover; }
+
+.adelante5 {
+  height: 100%;
+  width: 100%;
+  background-size: cover; }
+
+.adelante6 {
+  height: 100%;
+  width: 100%;
+  background-size: cover; }
+
+.adelante1 {
+  background-image: url(../Imagenes/torre-ezeiza.jfif); }
+
+.adelante2 {
+  background-image: url(../Imagenes/edificio.bmp); }
+
+.adelante3 {
+  background-image: url(../Imagenes/puerto-plano.jfif); }
+
+.adelante4 {
+  background-image: url(../Imagenes/metrobus.jpg); }
+
+.adelante5 {
+  background-image: url(../Imagenes/parque-eolico.png); }
+
+.adelante6 {
+  background-image: url(../Imagenes/Planta-potabiliadora.png);
+  /****Fin Mobil****/
+  /****Inicio Desktop****/
+  /****Fin Desktop****/
+  /* Trabaja con nosotros */ }
+  @media screen and (min-width: 1024px) {
+    .adelante6 .trabajos-realizado-grid {
+      display: grid;
+      grid-template-areas: "contenedor1" "flex1";
+      position: relative; }
+    .adelante6 .trabajos-realizados-contenedor1 {
+      grid-area: contenedor1;
+      position: relative;
+      top: 20px; }
+    .adelante6 .contenedor2-flex {
+      grid-area: flex1;
+      position: relative;
+      top: 20px;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 20px;
+      margin-bottom: 30px; } }
+  .adelante6 .trabaja-con-nosotros-contenedor1 {
+    height: 700px;
+    padding-top: 50px; }
+
+/* Contaco */
+.contacto-contenedor1 {
+  display: grid;
+  grid-template-areas: "contacto" "img-obras-civiles" "obras-civiles" "img-obras-viales" "obras-viales" "img-obras-hidricas" "obras-hidricas";
+  /* grid-template-rows: repeat(6, 2fr); */ }
+
+.contacto {
+  grid-area: contacto; }
+
+.img-obras-civiles {
+  grid-area: img-obras-civiles;
+  height: 200px;
+  width: 200px; }
+
+.ing {
+  list-style-image: url(../Imagenes/baseline-engineering.svg); }
+
+.obras-civiles {
+  grid-area: obras-civiles;
+  width: 500px;
+  height: 200px; }
+
+.img-obras-viales {
+  grid-area: img-obras-viales;
+  height: 200px;
+  width: 200px; }
+
+.obras-viales {
+  grid-area: obras-viales;
+  width: 500px;
+  height: 200px; }
+
+.img-obras-hidricas {
+  grid-area: img-obras-hidricas;
+  height: 200px;
+  width: 200px; }
+
+.obras-hidricas {
+  grid-area: obras-hidricas;
+  width: 500px;
+  height: 200px; }
+
+/**** Fin Mobile****/
+/**** Inicio contacto Desktop****/
+@media screen and (min-width: 1024px) {
+  .contacto-contenedor1 {
+    display: flex;
+    flex-direction: column; }
+  .contacto-flex {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    gap: 20px; } }
+
+/* Global */
+* {
+  box-sizing: border-box;
+  zoom: 100%; }
+
+img {
+  max-width: 100%; }
+
+/****Inicio Mobile****/
+body {
+  background-color: #a5bab6;
+  color: #000000;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  overflow-x: hidden; }
+
+main {
+  grid-area: main; }
+
+.tituliLista {
+  font-family: "Lato", sans-serif; }
+
+.positionSticky {
+  position: sticky;
+  top: 205px;
+  height: 40px;
+  margin-bottom: 25px;
+  background-color: #a5bab6; }
+
+.contacto__mail li {
+  list-style-image: url(../Imagenes/mail-filled.svg);
+  font-family: "Raleway", sans-serif; }
+
+.publico li {
+  list-style-image: url(../Imagenes/government-fill.svg);
+  font-family: "Raleway", sans-serif; }
+
+.privado li {
+  list-style-image: url(../Imagenes/crane.svg);
+  font-family: "Raleway", sans-serif; }
+
+.estudios li {
+  list-style-image: url(../Imagenes/gear.svg);
+  font-family: "Raleway", sans-serif; }
+
+.construccion li {
+  list-style-image: url(../Imagenes/construction-worker-negative.svg);
+  font-family: "Raleway", sans-serif; }
+
+.auditoria li {
+  list-style-image: url(../Imagenes/i-documents-accepted.svg);
+  font-family: "Raleway", sans-serif; }
+
+/****Fin Mobile****/
+/****Inicio Desktop****/
+@media screen and (min-width: 1024px) {
+  .positionSticky {
+    top: 160px; } }
+
+/****Fin Desktop****/

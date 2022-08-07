@@ -1,0 +1,6 @@
+1- En el home.scss. Agregue un map-get al body y un map a los iconos de las distitnas listas del sitio web
+2- En contactos.sccc agregué un map para los iconos de esa página, y mixin con parámetros, aunque estos pueden verse en todos los archivos scss.
+3- En el index.scss inclui un extend en la clase .clientes__imagenes__imagen5
+4- En trabajos-realizados.scss se coloco un ciclo for para las tarjetas y un extend la clase .atras
+5- Se colocaron keywords a cada pagina web y una descrpcion distinta a cada una de ellas
+6- Se redujeron con squoos el tamaño de las imagenes

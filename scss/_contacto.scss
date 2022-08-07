@@ -1,0 +1,72 @@
+@import "_variables.scss";
+
+/* Contaco */
+
+.contacto-contenedor1 {
+  display: grid;
+  grid-template-areas:
+    "contacto"
+    "img-obras-civiles"
+    "obras-civiles"
+    "img-obras-viales"
+    "obras-viales"
+    "img-obras-hidricas"
+    "obras-hidricas";
+  /* grid-template-rows: repeat(6, 2fr); */
+}
+
+.contacto {
+  grid-area: contacto;
+}
+.img-obras-civiles {
+  grid-area: img-obras-civiles;
+  @include size($width-height-img-obras, $width-height-img-obras);
+}
+.ing {
+  list-style-image: url(../Imagenes/baseline-engineering.svg);
+}
+
+.obras-civiles {
+  grid-area: obras-civiles;
+  width: 500px;
+  height: $width-height-img-obras;
+}
+
+.img-obras-viales {
+  grid-area: img-obras-viales;
+  @include size($width-height-img-obras, $width-height-img-obras);
+}
+
+.obras-viales {
+  grid-area: obras-viales;
+  width: 500px;
+  height: $width-height-img-obras;
+}
+
+.img-obras-hidricas {
+  grid-area: img-obras-hidricas;
+  @include size($width-height-img-obras, $width-height-img-obras);
+}
+
+.obras-hidricas {
+  grid-area: obras-hidricas;
+  width: 500px;
+  height: $width-height-img-obras;
+}
+
+/**** Fin Mobile****/
+
+/**** Inicio contacto Desktop****/
+@media screen and (min-width: 1024px) {
+  .contacto-contenedor1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contacto-flex {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    gap: 20px;
+  }
+}

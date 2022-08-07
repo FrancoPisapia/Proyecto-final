@@ -1,0 +1,120 @@
+/* Trabajos realizados */
+
+.trabajos-realizados-contenedor1 {
+  width: 100%;
+}
+
+.contenedor2-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tarjeta {
+  height: 350px;
+  width: 300px;
+  background-color: #a5bab6;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.5s ease;
+}
+
+.adelante {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.atras {
+  @extend .adelante;
+  transform: rotateY(180deg);
+  background-color: rgba(165, 186, 182, 0.8);
+
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta-flex:hover .tarjeta {
+  transform: rotateY(180deg);
+}
+
+@for $i from 1 through 6 {
+  .adelante#{$i} {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+  }
+}
+
+.adelante1 {
+  background-image: url(../Imagenes/torre-ezeiza.jfif);
+}
+
+.adelante2 {
+  background-image: url(../Imagenes/edificio.bmp);
+}
+
+.adelante3 {
+  background-image: url(../Imagenes/puerto-plano.jfif);
+}
+
+.adelante4 {
+  background-image: url(../Imagenes/metrobus.jpg);
+}
+
+.adelante5 {
+  background-image: url(../Imagenes/parque-eolico.png);
+}
+
+.adelante6 {
+  background-image: url(../Imagenes/Planta-potabiliadora.png);
+
+  /****Fin Mobil****/
+
+  /****Inicio Desktop****/
+
+  @media screen and (min-width: 1024px) {
+    .trabajos-realizado-grid {
+      display: grid;
+      grid-template-areas:
+        "contenedor1"
+        "flex1";
+      position: relative;
+    }
+
+    .trabajos-realizados-contenedor1 {
+      grid-area: contenedor1;
+      position: relative;
+      top: 20px;
+    }
+
+    .contenedor2-flex {
+      grid-area: flex1;
+      position: relative;
+      top: 20px;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  /****Fin Desktop****/
+
+  /* Trabaja con nosotros */
+
+  .trabaja-con-nosotros-contenedor1 {
+    height: 700px;
+    padding-top: 50px;
+  }
+}

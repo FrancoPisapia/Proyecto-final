@@ -1,0 +1,13 @@
+/* Nuestros clientes */
+/****Inicio Mobil****/
+.clientes__imagenes--wrap {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.nuestros-clientes-contenedor1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
