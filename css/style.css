@@ -629,9 +629,10 @@ main {
 
 .positionSticky {
   position: sticky;
-  top: 205px;
-  height: 40px;
+  top: 215px;
+  height: 50px;
   margin-bottom: 25px;
+  margin-top: 25px;
   background-color: #a5bab6; }
 
 .contacto__mail li {
