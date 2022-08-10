@@ -509,10 +509,10 @@ form {
   background-size: cover; }
 
 .adelante1 {
-  background-image: url(../Imagenes/torre-ezeiza.jfif); }
+  background-image: url(../Imagenes/torre-ezeiza.webp); }
 
 .adelante2 {
-  background-image: url(../Imagenes/edificio.bmp); }
+  background-image: url(../Imagenes/edificio.webp); }
 
 .adelante3 {
   background-image: url(../Imagenes/puerto-plano.jfif); }
@@ -521,10 +521,10 @@ form {
   background-image: url(../Imagenes/metrobus.jpg); }
 
 .adelante5 {
-  background-image: url(../Imagenes/parque-eolico.png); }
+  background-image: url(../Imagenes/parque-eolico.webp); }
 
 .adelante6 {
-  background-image: url(../Imagenes/Planta-potabiliadora.png);
+  background-image: url(../Imagenes/Planta-potabiliadora.webp);
   /****Fin Mobil****/
   /****Inicio Desktop****/
   /****Fin Desktop****/
