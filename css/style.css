@@ -134,8 +134,7 @@ footer {
   bottom: 7px;
   right: 5px;
   z-index: 20;
-  color: black;
-  background-color: #636363; }
+  color: black; }
 
 .linksUtiles {
   list-style-image: url(../Imagenes/admin-links.svg); }
