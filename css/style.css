@@ -131,8 +131,8 @@ footer {
 
 .ir-arriba {
   position: fixed;
-  bottom: 7px;
-  right: 5px;
+  bottom: 2%;
+  right: 2%;
   z-index: 20;
   color: black; }
 
@@ -158,7 +158,10 @@ footer {
     justify-content: space-around;
     margin: 0px -20px -10px -10px;
     padding: 20px;
-    width: 105%; } }
+    width: 105%; }
+  .ir-arriba {
+    bottom: 7px;
+    right: 5px; } }
 
 /****Inicio Mobile****/
 .obras__video {
@@ -187,9 +190,9 @@ footer {
 /****Inicio Mobile****/
 .vision {
   position: relative;
-  bottom: -20px;
+  bottom: -5px;
   height: 10%;
-  margin: 0px 10px 160px 0px;
+  margin: -10px 10px 160px 0px;
   width: 60%; }
 
 .clientes {
@@ -204,7 +207,7 @@ footer {
 .clientes--positionSticky {
   position: sticky;
   top: 150px;
-  height: 40px;
+  height: 320px;
   background-color: #a5bab6; }
 
 .clientes__imagenes {
@@ -628,10 +631,10 @@ main {
 
 .positionSticky {
   position: sticky;
-  top: 215px;
+  top: 207px;
   height: 50px;
-  margin-bottom: 25px;
-  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-top: 20px;
   background-color: #a5bab6; }
 
 .contacto__mail li {

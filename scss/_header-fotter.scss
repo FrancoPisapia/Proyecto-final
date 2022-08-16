@@ -185,8 +185,8 @@ footer {
 
 .ir-arriba {
   position: fixed;
-  bottom: 7px;
-  right: 5px;
+  bottom: 2%;
+  right: 2%;
   z-index: 20;
 
   color: black;
@@ -224,4 +224,10 @@ footer {
     padding: 20px;
     width: 105%;
   }
+  .ir-arriba {
+    bottom: 7px;
+    right: 5px;
+
+  }
+  
 }
