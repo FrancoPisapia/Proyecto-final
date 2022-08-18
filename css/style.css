@@ -94,7 +94,7 @@ a {
     display: grid;
     min-height: 100vh;
     grid-template-areas: "header header header" "main main main" "footer footer footer";
-    grid-template-rows: 140px 92% auto; }
+    grid-template-rows: 140px 90% auto; }
   h1 {
     text-align: left; }
   /* .navbar-nav {
@@ -287,6 +287,11 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 10px; }
+
+@media screen and (min-width: 1024px) {
+  .nuestros-clientes-contenedor1 {
+    margin-bottom: -20px;
+    margin-top: 20px; } }
 
 /* Servicios */
 .servicios-contenedor1 {
