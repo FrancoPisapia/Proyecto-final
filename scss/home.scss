@@ -51,6 +51,7 @@ main {
   margin-top: 20px;
 
   background-color: $color-body;
+  z-index: 50;
 }
 $iconos: (
   contacto__mail: url(../Imagenes/mail-filled.svg),

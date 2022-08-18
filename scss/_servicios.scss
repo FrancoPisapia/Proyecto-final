@@ -50,6 +50,36 @@ $listas: (
     list-style-image: $vinieta;
   }
 }
+.card {
+  display: block;
+  background-color: $color-body;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  border: 2px solid rgba(0,0,0,.5);
+}
+
+.card-2 {
+  display: block;
+  background-color: $color-body;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.lista-none{
+  display: block;
+}
+
+
+.list-group-item {
+  position: relative;
+  display: list-item;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: $color-body;
+  border: none;
+}
 
 /****Fin Mobil****/
 

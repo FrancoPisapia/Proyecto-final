@@ -94,7 +94,7 @@ a {
     display: grid;
     min-height: 100vh;
     grid-template-areas: "header header header" "main main main" "footer footer footer";
-    grid-template-rows: 140px auto 160px; }
+    grid-template-rows: 140px 92% auto; }
   h1 {
     text-align: left; }
   /* .navbar-nav {
@@ -285,7 +285,8 @@ footer {
 .nuestros-clientes-contenedor1 {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-bottom: 10px; }
 
 /* Servicios */
 .servicios-contenedor1 {
@@ -334,6 +335,32 @@ footer {
 
 .casco {
   list-style-image: url(../Imagenes/helmet-safety.svg); }
+
+.card {
+  display: block;
+  background-color: #a5bab6;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  border: 2px solid rgba(0, 0, 0, 0.5); }
+
+.card-2 {
+  display: block;
+  background-color: #a5bab6;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  border: none; }
+
+.lista-none {
+  display: block; }
+
+.list-group-item {
+  position: relative;
+  display: list-item;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #a5bab6;
+  border: none; }
 
 /****Fin Mobil****/
 /****Inicio Desktop****/
@@ -635,7 +662,8 @@ main {
   height: 50px;
   margin-bottom: 10px;
   margin-top: 20px;
-  background-color: #a5bab6; }
+  background-color: #a5bab6;
+  z-index: 50; }
 
 .contacto__mail li {
   list-style-image: url(../Imagenes/mail-filled.svg);
