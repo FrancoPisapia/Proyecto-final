@@ -132,7 +132,7 @@ footer {
 .ir-arriba {
   position: fixed;
   bottom: 2%;
-  right: 2%;
+  right: 8%;
   z-index: 20;
   color: black; }
 
@@ -285,8 +285,7 @@ footer {
 .nuestros-clientes-contenedor1 {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 10px; }
+  justify-content: space-around; }
 
 @media screen and (min-width: 1024px) {
   .nuestros-clientes-contenedor1 {
