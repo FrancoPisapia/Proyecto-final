@@ -7,8 +7,6 @@
     "header"
     "main"
     "footer";
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
 }
 
 
@@ -116,9 +114,8 @@ a {
 }
 
 /****Fin Header Mobile****/
-
 /****Inicio Header Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   img {
     max-width: 100%;
   }
@@ -172,9 +169,9 @@ footer {
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   margin: 0px -8px -10px -8px;
-  width: 100%;
   padding-left: 10px;
 
   background-color: $color-footer;
@@ -183,6 +180,22 @@ footer {
   font-size: 15px;
 
   z-index: 10;
+}
+
+.contacto{
+  margin-top: 10px;
+  text-align: left;
+  position: relative;
+  width: 350px;
+  height: 150px;
+}
+
+.linksUtiles{
+  text-align: left;
+  position: relative;
+  width: 350px;
+  height: 150px;
+
 }
 
 .ir-arriba {
@@ -214,13 +227,14 @@ footer {
 
 /*** Inicio Footer Desktop***/
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   footer {
     grid-area: footer;
 
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    
 
     margin: 0px -20px -10px -10px;
     padding: 20px;

@@ -1,9 +1,7 @@
 /**** Inicio Mobile header****/
 .grid {
   display: grid;
-  grid-template-areas: "header" "main" "footer";
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh; }
+  grid-template-areas: "header" "main" "footer"; }
 
 header {
   grid-area: header;
@@ -88,7 +86,7 @@ a {
 
 /****Fin Header Mobile****/
 /****Inicio Header Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   img {
     max-width: 100%; }
   .grid {
@@ -121,14 +119,27 @@ footer {
   grid-area: footer;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0px -8px -10px -8px;
-  width: 100%;
   padding-left: 10px;
   background-color: #636363;
   color: #ffffff;
   width: 110%;
   font-size: 15px;
   z-index: 10; }
+
+.contacto {
+  margin-top: 10px;
+  text-align: left;
+  position: relative;
+  width: 350px;
+  height: 150px; }
+
+.linksUtiles {
+  text-align: left;
+  position: relative;
+  width: 350px;
+  height: 150px; }
 
 .ir-arriba {
   position: fixed;
@@ -151,7 +162,7 @@ footer {
 
 /**** Fin Footer Mobile****/
 /*** Inicio Footer Desktop***/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   footer {
     grid-area: footer;
     display: flex;
@@ -183,7 +194,7 @@ footer {
 
 /****Fin Mobile****/
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .border {
     grid-area: border; } }
 
@@ -265,7 +276,7 @@ footer {
 
 /****Fin Mobile****/
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   form {
     height: 500px; }
   .clientes--positionSticky {
@@ -285,13 +296,19 @@ footer {
 
 .nuestros-clientes-contenedor1 {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 70vh;
+  gap: 20px; }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .nuestros-clientes-contenedor1 {
+    flex-direction: row;
     margin-bottom: -20px;
-    margin-top: 20px; } }
+    margin-top: 20px;
+    height: auto;
+    gap: 20px; } }
 
 /* Servicios */
 .servicios-contenedor1 {
@@ -369,7 +386,7 @@ footer {
 
 /****Fin Mobil****/
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .servicios-contenedor2 {
     grid-area: imagen1; } }
 
@@ -384,7 +401,7 @@ footer {
 
 /****Fin Mobil****/
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .servicios-contenedor2__imagen1 {
     z-index: 20;
     height: 400px;
@@ -394,15 +411,18 @@ footer {
 /****Fin Desktop****/
 /****Inicio Mobil****/
 .servicios-contenedor3 {
-  height: 600px;
   margin-top: 10px; }
 
 .servicios-contenedor3--display-flex {
   display: flex;
+  position: relative;
+  flex-direction: column;
   justify-content: space-around;
-  gap: 10px; }
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px; }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   /* Servicios */
   .servicios-contenedor3 {
     position: relative;
@@ -410,6 +430,7 @@ footer {
     height: 500px; }
   .servicios-contenedor3--display-flex {
     display: flex;
+    flex-direction: row;
     justify-content: space-around; } }
 
 /****Inicio Mobile****/
@@ -421,7 +442,7 @@ footer {
 
 /****Fin Mobile****/
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .sobre-nosotros--grid2 {
     grid-template-areas: "sobreNosotros imagen1" "border border" "sobre-nosotros-contenedor2 contenedor3";
     grid-template-columns: 50% 50%; } }
@@ -436,7 +457,7 @@ footer {
 
 /****Fin Mobil****/
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .sobre-nosotros-contenedor2 {
     grid-area: sobre-nosotros-contenedor2; }
   .margin {
@@ -462,7 +483,7 @@ form {
   height: 500px; }
 
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   form {
     height: 500px; }
   .clientes--positionSticky {
@@ -563,7 +584,7 @@ form {
   /****Inicio Desktop****/
   /****Fin Desktop****/
   /* Trabaja con nosotros */ }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 992px) {
     .adelante6 .trabajos-realizado-grid {
       display: grid;
       grid-template-areas: "contenedor1" "flex1";
@@ -628,7 +649,7 @@ form {
 
 /**** Fin Mobile****/
 /**** Inicio contacto Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .contacto-contenedor1 {
     display: flex;
     flex-direction: column; }
@@ -696,7 +717,7 @@ main {
 
 /****Fin Mobile****/
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .positionSticky {
     top: 160px; } }
 
