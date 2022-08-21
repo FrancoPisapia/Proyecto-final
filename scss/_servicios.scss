@@ -85,7 +85,7 @@ $listas: (
 
 /****Inicio Desktop****/
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .servicios-contenedor2 {
     grid-area: imagen1;
   }
@@ -105,7 +105,7 @@ $listas: (
 
 /****Inicio Desktop****/
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .servicios-contenedor2__imagen1 {
     z-index: 20;
     @include size(100%, 400px);
@@ -116,17 +116,20 @@ $listas: (
 
 /****Inicio Mobil****/
 .servicios-contenedor3 {
-  height: 600px;
   margin-top: 10px;
 }
 
 .servicios-contenedor3--display-flex {
   display: flex;
+  position: relative;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center ;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   /* Servicios */
 
   .servicios-contenedor3 {
@@ -138,6 +141,7 @@ $listas: (
 
   .servicios-contenedor3--display-flex {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
   }
 }

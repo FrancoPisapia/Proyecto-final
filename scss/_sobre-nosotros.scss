@@ -17,7 +17,7 @@
 
 /****Inicio Desktop****/
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .sobre-nosotros--grid2 {
     grid-template-areas:
       "sobreNosotros imagen1"
@@ -42,7 +42,7 @@
 /****Fin Mobil****/
 
 /****Inicio Desktop****/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .sobre-nosotros-contenedor2 {
     grid-area: sobre-nosotros-contenedor2;
   }
