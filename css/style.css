@@ -416,14 +416,14 @@ footer {
 /* Sobre nosotros */
 .sobre-nosotros--grid2 {
   display: grid;
-  grid-template-areas: "sobreNosotros" "imagen1" "sobre-nosotros-contenedor2" "border" "contenedor3";
+  grid-template-areas: "sobreNosotros" "imagen1" "sobre-nosotros-contenedor2" "border" "contenedor3";
   gap: 20px; }
 
 /****Fin Mobile****/
 /****Inicio Desktop****/
 @media screen and (min-width: 1024px) {
   .sobre-nosotros--grid2 {
-    grid-template-areas: "sobreNosotros imagen1" "border border" "sobre-nosotros-contenedor2 contenedor3";
+    grid-template-areas: "sobreNosotros imagen1" "border border" "sobre-nosotros-contenedor2 contenedor3";
     grid-template-columns: 50% 50%; } }
 
 /****Fin Desktop****/
@@ -566,7 +566,7 @@ form {
   @media screen and (min-width: 1024px) {
     .adelante6 .trabajos-realizado-grid {
       display: grid;
-      grid-template-areas: "contenedor1" "flex1";
+      grid-template-areas: "contenedor1" "flex1";
       position: relative; }
     .adelante6 .trabajos-realizados-contenedor1 {
       grid-area: contenedor1;
@@ -587,7 +587,7 @@ form {
 /* Contaco */
 .contacto-contenedor1 {
   display: grid;
-  grid-template-areas: "contacto" "img-obras-civiles" "obras-civiles" "img-obras-viales" "obras-viales" "img-obras-hidricas" "obras-hidricas";
+  grid-template-areas: "contacto" "img-obras-civiles" "obras-civiles" "img-obras-viales" "obras-viales" "img-obras-hidricas" "obras-hidricas";
   /* grid-template-rows: repeat(6, 2fr); */ }
 
 .contacto {
