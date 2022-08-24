@@ -28,7 +28,7 @@
 
 .obras-civiles {
   grid-area: obras-civiles;
-  width: 500px;
+  width: auto;
   height: $width-height-img-obras;
 }
 
@@ -39,7 +39,7 @@
 
 .obras-viales {
   grid-area: obras-viales;
-  width: 500px;
+  width: auto;
   height: $width-height-img-obras;
 }
 
@@ -50,7 +50,7 @@
 
 .obras-hidricas {
   grid-area: obras-hidricas;
-  width: 500px;
+  width: auto;
   height: $width-height-img-obras;
 }
 

@@ -13,8 +13,7 @@ header {
   top: 0px;
   z-index: 100;
   background-color: #3c3c3c;
-  margin: -20px -8px 0 -8px;
-  width: 110%; }
+  width: 100%; }
 
 .bg-light {
   --bs-bg-opacity: 0;
@@ -37,7 +36,7 @@ header {
 
 h1 {
   color: #ffffff;
-  margin-left: 20px;
+  margin-left: 00px;
   font-family: "Raleway", sans-serif;
   text-align: center; }
 
@@ -95,7 +94,8 @@ a {
     grid-template-areas: "header header header" "main main main" "footer footer footer";
     grid-template-rows: 140px 90% auto; }
   h1 {
-    text-align: left; }
+    text-align: left;
+    margin-left: 20px; }
   /* .navbar-nav {
         display: flex;
         justify-content: space-evenly;
@@ -120,7 +120,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px -8px -10px -8px;
   padding-left: 10px;
   background-color: #636363;
   color: #ffffff;
@@ -258,6 +257,9 @@ footer {
   width: 100%;
   padding-bottom: 20px;
   margin-bottom: 20px; }
+
+iframe {
+  max-width: 90%; }
 
 .obras__imagenes__contenedor {
   position: relative;
@@ -470,8 +472,7 @@ footer {
   margin-left: 10px; }
 
 .imagen1 {
-  grid-area: imagen1;
-  margin: 75px 25px 0 0; }
+  grid-area: imagen1; }
 
 /****Fin Desktop****/
 /* Trabaja con nosotros */
@@ -624,7 +625,7 @@ form {
 
 .obras-civiles {
   grid-area: obras-civiles;
-  width: 500px;
+  width: auto;
   height: 200px; }
 
 .img-obras-viales {
@@ -634,7 +635,7 @@ form {
 
 .obras-viales {
   grid-area: obras-viales;
-  width: 500px;
+  width: auto;
   height: 200px; }
 
 .img-obras-hidricas {
@@ -644,7 +645,7 @@ form {
 
 .obras-hidricas {
   grid-area: obras-hidricas;
-  width: 500px;
+  width: auto;
   height: 200px; }
 
 /**** Fin Mobile****/
@@ -684,7 +685,7 @@ main {
 
 .positionSticky {
   position: sticky;
-  top: 215px;
+  top: 208px;
   height: 50px;
   margin-bottom: 10px;
   margin-top: 20px;
