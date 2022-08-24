@@ -316,7 +316,7 @@ iframe {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 20px; }
+  gap: 19px; }
 
 @media screen and (min-width: 992px) {
   .nuestros-clientes-contenedor1 {
