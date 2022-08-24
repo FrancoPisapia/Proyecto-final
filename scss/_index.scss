@@ -38,10 +38,9 @@
 .vision {
   position: relative;
   bottom: -5px;
-  height: 10%;
 
-  margin: -10px 10px 160px 0px;
-  width: 60%;
+  margin: -10px 10px 40px 0px;
+  width: 100%;
 }
 
 .clientes {
@@ -87,12 +86,7 @@
 }
 
 .obras__imagenes__imagen1 {
-  display: block;
-
-  position: absolute;
-  top: 770px;
   z-index: 20;
-  right: 5%;
 
   @include size(200px, 300px);
 }
@@ -110,6 +104,15 @@
 
 iframe{
   max-width: 90%;
+}
+.centrado{
+ text-align: center;
+ justify-content: center;
+ justify-items: center;
+ padding: auto ;
+ align-items: center;
+ justify-self: center;
+ align-self: center;
 }
 .obras__imagenes__contenedor {
   position: relative;
@@ -147,8 +150,23 @@ iframe{
   }
 
   .obras__imagenes__imagen1 {
-    right: 5%;
+    right: 1%;
+    z-index: 20;
+
+  
+    @include size(200px, 300px);
   }
+
+  .centrado{
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    padding: auto ;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+   }
+  
 
   .obras__imagenes__contenedor {
     position: relative;
