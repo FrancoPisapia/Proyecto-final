@@ -143,7 +143,7 @@ footer {
 .ir-arriba {
   position: fixed;
   bottom: 2%;
-  right: 12%;
+  right: 2%;
   z-index: 20;
   color: black; }
 
@@ -735,6 +735,6 @@ main {
 /****Inicio Desktop****/
 @media screen and (min-width: 992px) {
   .positionSticky {
-    top: 160px; } }
+    top: 140px; } }
 
 /****Fin Desktop****/
