@@ -1,0 +1,34 @@
+@import "variables";
+
+.imgagen-card {
+  display: block;
+  @include size(100%, 250px);
+}
+
+.alineado {
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  align-content: center;
+}
+
+input {
+  margin: 2px;
+}
+
+.pop-up-card {
+  background-color: $color-footer;
+  color: $color-letra-body;
+}
+
+.titulo-card {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 992px) {
+  .alineado {
+    flex-direction: row;
+    margin-bottom: 0px;
+  }
+}

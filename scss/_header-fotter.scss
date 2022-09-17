@@ -9,7 +9,22 @@
     "footer";
 }
 
+.inciarSecion {
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 15px;
 
+  .inline-block {
+    display: block;
+    text-align: center;
+    justify-items: stretch;
+  }
+
+  a:hover {
+    color: rgba(0, 0, 0, 0.55);
+    transition: 0.1s ease;
+  }
+}
 header {
   grid-area: header;
 
@@ -21,6 +36,7 @@ header {
   position: sticky;
   top: 0px;
   z-index: 100;
+  color: #ffffff;
 
   background-color: $color-nav;
   // margin: -20px -8px 0 -8px;
@@ -29,7 +45,7 @@ header {
 
 .bg-light {
   --bs-bg-opacity: 0;
-  background-color:$color-nav;
+  background-color: $color-nav;
 }
 
 .navbar-light .navbar-brand {
@@ -38,7 +54,7 @@ header {
 
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0.55);
-  border-color:$color-nav;
+  border-color: $color-nav;
 }
 
 .navbar-light .navbar-nav .nav-link.active,
@@ -135,6 +151,9 @@ a {
     text-align: left;
     margin-left: 20px;
   }
+  .wrap {
+    flex-wrap: nowrap;
+  }
 
   /* .navbar-nav {
         display: flex;
@@ -182,7 +201,7 @@ footer {
   z-index: 10;
 }
 
-.contacto{
+.contacto {
   margin-top: 10px;
   text-align: left;
   position: relative;
@@ -190,12 +209,11 @@ footer {
   height: 150px;
 }
 
-.linksUtiles{
+.linksUtiles {
   text-align: left;
   position: relative;
   width: 350px;
   height: 150px;
-
 }
 
 .ir-arriba {
@@ -234,7 +252,6 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
 
     margin: 0px -20px -10px -10px;
     padding: 20px;
@@ -244,5 +261,4 @@ footer {
     bottom: 7px;
     right: 5px;
   }
-  
 }
