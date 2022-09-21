@@ -4,6 +4,7 @@ let obra =  prompt ( "Vial, Hidraúlica o Civil");
 obra.toLowerCase()
 let presupuesto = parseFloat(prompt ("Ingrese el presupuesto oficial de la obra"));
 let longitud;
+let tipologia_hidraulica;
 let mensaje;
 
 
@@ -33,7 +34,25 @@ let mensaje;
 
             }
             case ("hidraulica"):
+                verificacion_hidraulica (presupuesto);
                 
+                let instancia_hidraulica = prompt("Anteproyecto o Ejecutivo")
+                instancia_hidraulica.toLowerCase();
+
+                switch (instancia_hidraulica) {
+                    case ("anteproyecto"):
+                        let trabajos_h = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora");
+                        anteproyecto_hidraulico (trabajos_h);
+                        break;
+                    case ("p. ejecutivo"):
+                        trabajos_h = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora 5-Direccion de obra");
+                        proyecto_ejecutivo (trabajos_h);
+                        break;
+                    default:
+                        console.log ("NADA")
+    
+                }
+
 
             console.log ("todo Ok z")
 
@@ -64,8 +83,8 @@ let mensaje;
     }
 
 /* Verificacion de si es licitacion pública o privada */
-function verificacion_licitacion (licitacion){
-    licitacion.toLowerCase()
+    function verificacion_licitacion (licitacion){
+    licitacion.toLowerCase();
     if (licitacion == "publica" || licitacion == "privada"){
 
     } else {
@@ -143,3 +162,56 @@ function proyecto_ejecutivo (trabajos){
         proyecto_ejecutivo (trabajos);
     }
 }
+
+    /********** OBRAS HIDRAULICAS *********/
+    /* Verificacion*/
+    function verificacion_hidraulica (presupuesto){
+        
+        if ( (isNaN (presupuesto))){
+            mensaje = alert ("Ingrese valores numericos");
+            presupuesto = parseFloat(prompt ("Ingrese el presupuesto oficial de la obra"))
+            verificacion_hidraulica (presupuesto);
+        }else if (presupuesto <=0){
+            mensaje = alert ("Ingrese valores mayores a cero");
+            presupuesto = parseFloat(prompt ("Ingrese el presupuesto oficial de la obra"))
+            verificacion_hidraulica (presupuesto);
+        }
+
+    
+    } 
+
+    /* Funcion anteproyectos  hidraulicos */
+
+    function anteproyecto_hidraulico (trabajos_h){
+        let extension;
+        let superficie;
+        let total_hidraulica;
+        switch (trabajos_h){
+            case "1":
+                extension = parseFloat(prompt("Ingrese longitud de la obra"));
+                superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
+                total_hidraulica = parseFloat(0.40*presupuesto*(superficie/extension));
+                console.log (`El presupuesto del movimiento de suelo y cañerias es $ ${total_hidraulica} en forma estimada`);
+                break;
+            case "2":
+                extension = parseFloat(prompt("Ingrese longitud de la obra"));
+                superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
+                total_hidraulica = parseFloat(0.60*presupuesto*(superficie/extension));
+                console.log (`El presupuesto del movimiento de suelo y cañerias es $ ${total_hidraulica} en forma estimada`);
+                break;
+            case "3":
+                superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
+                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.5 * presupuesto/superficie} por la obra electromecánica es ${presupuesto * 0.70/superficie} y por la obra civil es ${presupuesto * 0.20/superficie}  en forma estimada`);
+                break;
+            case "4":
+                superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
+                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.5 * presupuesto/superficie} por la obra electromecánica es ${presupuesto * 0.70/superficie} y por la obra civil es ${presupuesto * 0.20/superficie}  en forma estimada`);
+                break;
+            default:
+                alert ("Ingrese los valores de 1 a 4");
+                trabajos_h = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora");
+                anteproyecto_hidraulico (trabajos_h);
+        }
+    }
+
+    /*Funcion de proyecto ejecutivo */
