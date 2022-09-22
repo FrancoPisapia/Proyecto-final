@@ -10,84 +10,8 @@ let trabajos_h;
 let trabajos_c;
 
 
-    switch (obra.toLowerCase()){
-        case ("vial"):
+    cotizador (obra);
 
-            longitud = parseFloat(prompt ("Ingrese la longitud en Km de la obra"))
-            verificacion_viales (presupuesto, longitud);
-            let licitacion = prompt("Pública o Privada");
-            verificacion_licitacion (licitacion);
-
-            let instancia = prompt("Anteproyecto o ejecutivo")
-            instancia.toLowerCase()
-
-            switch (instancia.toLowerCase()) {
-                case ("anteproyecto"):
-                    trabajos = prompt ("1- Obra básica 2-Señalizacion vertical y horizontal 3-Iluminacion");
-                    anteproyecto_viales (trabajos);
-                    break;
-                case ("ejecutivo"):
-                    trabajos = prompt ("1- Obra básica 2-Señalizacion vertical y horizontal 3-Iluminacion 4-Direccion de obra");
-                    proyecto_ejecutivo (trabajos);
-                    break;
-                default:
-                    repetir_vial (instancia);
-                    break;
-                    }break;
-
-            
-            case ("hidraulica"):
-                verificacion (presupuesto);
-                
-                let instancia_hidraulica = prompt("Anteproyecto o Ejecutivo");
-
-
-                switch (instancia_hidraulica.toLowerCase()) {
-                    case ("anteproyecto"):
-                        trabajos_h = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora");
-                        anteproyecto_hidraulico (trabajos_h);
-                        break;
-                    case ("ejecutivo"):
-                        trabajos_h = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora 5-Direccion de obra");
-                        proyecto_ejecutivo_h (trabajos_h);
-                        break;
-                    default:
-                        hidraulica (instancia_hidraulica);  
-    
-                } 
-                break;
-
-                case ("civil"):
-                    verificacion (presupuesto);
-                    superficie =parseFloat(prompt("Superficie en m^2 de la obra"));
-                    
-
-                    let instancia_civil = prompt("Anteproyecto o Ejecutivo");
-
-                    switch (instancia_civil.toLowerCase()){
-                        case "anteproyecto":
-                            trabajos_c = prompt("1-Movimiento de suelos 2- Estructura y mamposteria 3-Terminaciones (solados, revestimientos y pinturas)")
-                            anteproyecto_civil (trabajos_c);
-                            break;
-                        
-                        case "ejecutivo":
-                            trabajos_c = prompt("1- Direccion de obra 2-Especialista en seguridad de higiene");
-                            proyecto_ejectivo_c (trabajos_c);
-                            break;
-                        default:
-                            civil (instancia_civil);
-                            break;
-
-                    }
-
-
-                break;
-                default:
-                    console.log("NADAAA")
-
-
-            
-    }
 
 
     /********** OBRAS VIALES *********/
@@ -356,3 +280,89 @@ function proyecto_ejecutivo (trabajos){
             default:
                 civil  (instancia_civil);
     } }
+
+
+
+/* FUNCION TODO INCLUIDO */
+    function cotizador (obra){
+        obra =  prompt ( "Vial, Hidraúlica o Civil");
+        switch (obra.toLowerCase()){
+            case ("vial"):
+    
+                longitud = parseFloat(prompt ("Ingrese la longitud en Km de la obra"))
+                verificacion_viales (presupuesto, longitud);
+                let licitacion = prompt("Pública o Privada");
+                verificacion_licitacion (licitacion);
+    
+                let instancia = prompt("Anteproyecto o ejecutivo")
+                instancia.toLowerCase()
+    
+                switch (instancia.toLowerCase()) {
+                    case ("anteproyecto"):
+                        trabajos = prompt ("1- Obra básica 2-Señalizacion vertical y horizontal 3-Iluminacion");
+                        anteproyecto_viales (trabajos);
+                        break;
+                    case ("ejecutivo"):
+                        trabajos = prompt ("1- Obra básica 2-Señalizacion vertical y horizontal 3-Iluminacion 4-Direccion de obra");
+                        proyecto_ejecutivo (trabajos);
+                        break;
+                    default:
+                        repetir_vial (instancia);
+                        break;
+                        }break;
+    
+                
+                case ("hidraulica"):
+                    verificacion (presupuesto);
+                    
+                    let instancia_hidraulica = prompt("Anteproyecto o Ejecutivo");
+    
+    
+                    switch (instancia_hidraulica.toLowerCase()) {
+                        case ("anteproyecto"):
+                            trabajos_h = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora");
+                            anteproyecto_hidraulico (trabajos_h);
+                            break;
+                        case ("ejecutivo"):
+                            trabajos_h = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora 5-Direccion de obra");
+                            proyecto_ejecutivo_h (trabajos_h);
+                            break;
+                        default:
+                            hidraulica (instancia_hidraulica);  
+        
+                    } 
+                    break;
+    
+                    case ("civil"):
+                        verificacion (presupuesto);
+                        superficie =parseFloat(prompt("Superficie en m^2 de la obra"));
+                        
+    
+                        let instancia_civil = prompt("Anteproyecto o Ejecutivo");
+    
+                        switch (instancia_civil.toLowerCase()){
+                            case "anteproyecto":
+                                trabajos_c = prompt("1-Movimiento de suelos 2- Estructura y mamposteria 3-Terminaciones (solados, revestimientos y pinturas)")
+                                anteproyecto_civil (trabajos_c);
+                                break;
+                            
+                            case "ejecutivo":
+                                trabajos_c = prompt("1- Direccion de obra 2-Especialista en seguridad de higiene");
+                                proyecto_ejectivo_c (trabajos_c);
+                                break;
+                            default:
+                                civil (instancia_civil);
+                                break;
+    
+                        }
+    
+    
+                    break;
+                    
+                    default:
+                        cotizador ();
+                        break
+
+        }
+    
+    }
