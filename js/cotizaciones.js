@@ -1,6 +1,6 @@
 
 
-let obra =  prompt ( "Vial, Hidraúlica o Civil");
+let obra;
 let presupuesto = parseFloat(prompt ("Ingrese el presupuesto oficial de la obra"));
 let longitud;
 let trabajos;
@@ -18,7 +18,7 @@ let trabajos_c;
 
     /* Repetir proceso si no es anteproyecto o ejecutivo*/
     function repetir_vial (instancia){
-        instancia = prompt("Anteproyecto o Ejecutivo  bbbbbb")
+        instancia = prompt("Anteproyecto o Ejecutivo")
         if ( instancia == "anteproyecto" || instancia == "ejecutivo"){
             if (instancia == "anteproyecto" ){
                 let trabajos = prompt ("1- Obra básica 2-Señalizacion vertical y horizontal 3-Iluminacion");
@@ -29,7 +29,7 @@ let trabajos_c;
             proyecto_ejecutivo (trabajos);
         }
         } else{
-            instancia = prompt("Anteproyecto o Ejecutivo ccccccc");
+            instancia = prompt("Anteproyecto o Ejecutivo");
             repetir (instancia);
         }
     }
@@ -274,7 +274,7 @@ function proyecto_ejecutivo (trabajos){
                 anteproyecto_civil (trabajos_c);
                 break;
             case ("ejecutivo"):
-                trabajos_c = prompt ("1- Red de agua 2-Red Cloacal 3-Planta depuradora 4-Planta potabilizadora 5-Direccion de obra");
+                trabajos_c = prompt ("1- Direccion de obra 2-Especialista en seguridad de higiene");
                 proyecto_ejecutivo_c (trabajos_h);
                 break;
             default:
