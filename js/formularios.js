@@ -1,7 +1,25 @@
 
+    class Candidatos{
+        constructor (nombre, apellido, mail, descripcion, ciudad, dispositivo, telefono, curriculumn){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.mail = mail;
+            this.descripcion = descripcion;
+            this.ciudad = ciudad;
+            this.dispositivo = dispositivo;
+            this.telefono = telefono;
+            this.curriculumn = curriculumn
+        }
+        presentacion (){
+            console.log (`Hola soy ${this.nombre} ${this.apellido} mi mail es ${this.mail}. Mi contacto es ${this.dispositivo} ${this.telefono} y vivo en ${this.ciudad} .
+            ${this.descripcion}`)
+        }
+    }
 
+    let candidato1 = new Candidatos ("Franco", "Pisapia", "aaaaa","soy un capo", "Buenos Aires", "cel", "2324545830", "cv")
 
-    
+    console.log (candidato1);
+    candidato1.presentacion()
 
 // let form = document.getElementById ("form-trabaja-con-nosotros");
 
