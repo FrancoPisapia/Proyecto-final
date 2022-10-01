@@ -15,7 +15,7 @@ let usuarios = [];
 // }
 
 let crearUsuario = document.querySelector('#crearUsuario');
-let nombreUsuario = document.querySelector('#nombreUsuario');
+let nombredeUsuario = document.querySelector('#nombreUsuario');
 
 crearUsuario.addEventListener('click', agregarUsuario);
 
@@ -38,6 +38,7 @@ function agregarUsuario (event){
         usuarios.push(elemento)
     })
 
+    nombredeUsuario.innerHTML = nombreUsuario
     
     console.log(usuarios)
 
