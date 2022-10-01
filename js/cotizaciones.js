@@ -157,11 +157,11 @@ function proyecto_ejecutivo (trabajos){
                 break;
             case "3":
                 superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
-                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.5 * presupuesto/superficie} por la obra electromecánica es ${presupuesto * 0.70/superficie} y por la obra civil es ${presupuesto * 0.20/superficie}  en forma estimada`);
+                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.35 * presupuesto} por la obra electromecánica es ${presupuesto * 0.45} y por la obra civil es ${presupuesto * 0.20/superficie}  en forma estimada`);
                 break;
             case "4":
                 superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
-                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.5 * presupuesto/superficie} por la obra electromecánica es ${presupuesto * 0.70/superficie} y por la obra civil es ${presupuesto * 0.20/superficie}  en forma estimada`);
+                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.30 * presupuesto} por la obra electromecánica es ${presupuesto * 0.45} y por la obra civil es ${presupuesto * 0.25}  en forma estimada`);
                 break;
             default:
                 alert ("Ingrese los valores de 1 a 4");
@@ -191,11 +191,11 @@ function proyecto_ejecutivo (trabajos){
                 break;
             case "3":
                 superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
-                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.5 * presupuesto/superficie} por la obra electromecánica es ${presupuesto * 0.75/superficie} y por la obra civil es ${presupuesto * 0.25/superficie}  en forma estimada`);
+                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.33 * presupuesto} por la obra electromecánica es ${presupuesto * 0.47} y por la obra civil es ${presupuesto * 0.20}  en forma estimada`);
                 break;
             case "4":
                 superficie = parseFloat(prompt("Superficie en m^2 de la obra"));
-                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.5 * presupuesto/superficie} por la obra electromecánica es ${presupuesto * 0.80/superficie} y por la obra civil es ${presupuesto * 0.20/superficie}  en forma estimada`);
+                console.log (`El presupuesto del movimiento de suelo y la estructura resistente es ${0.27 * presupuesto} por la obra electromecánica es ${presupuesto * 0.44} y por la obra civil es ${presupuesto * 0.29}  en forma estimada`);
                 break;
             case "5":
                 console.log (`El presupuesto por la dirección de obra electromecánica es ${presupuesto * 0.015} y por la obra civil es ${presupuesto * 0.02}  en forma estimada`);
@@ -236,9 +236,9 @@ function proyecto_ejecutivo (trabajos){
         switch (trabajos_c){
             case "1":
                 if (subsuelos >0 ){
-                console.log (`El presupuesto para el movimiento de suelos para un edificio de ${subsuelos} es ${presupuesto*0.005*(subsuelos*2)}`)
+                console.log (`El presupuesto para el movimiento de suelos para un edificio de ${subsuelos} es ${presupuesto*0.07*(subsuelos*2)}`)
               } else {
-                  console.log (`El presupuesto para el movimiento de suelos para un edificio de ${subsuelos} es ${presupuesto*0.005}`)
+                  console.log (`El presupuesto para el movimiento de suelos para un edificio de ${subsuelos} es ${presupuesto*0.07}`)
               } break;
   
               case "2":
