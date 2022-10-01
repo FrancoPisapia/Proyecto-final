@@ -64,4 +64,37 @@ document.write(`</div>
 </footer>
 <span class="material-symbols-outlined ir-arriba"><a href="#ir-arriba">arrow_upward</a>
 </span>
-</div>`)
+</div>`);
+
+
+
+
+/* TABLAS COMPARATIVAS DE OBRAS*/
+
+let antecedentes = [
+    {nombre:'Inspección a la torre de control de Ezeiza',tipologia: 'Civil', presupuesto:400000000, comitente:'Aeropuertos Argentina 2000', duracion:17},
+    {nombre:'Proyecto de vivienda Sky Tigre',tipologia: 'Civil', presupuesto:2950000000, comitente:'Grupo Tueroc', duracion: 22},
+    {nombre:'Anteproyecto nueva darsena Pueroto de Buenos Aires',tipologia: 'Hidraúlica', presupuesto:5000000000, comitente:'Administacion Genral de puertos', duracion:'19 meses'},
+    {nombre:'Insprección de obra en la 9 de julio',tipologia: 'Vial', presupuesto:170000000, comitente:'Gobierno de la Ciudada de Buenos Aires', duracion:9 },
+    {nombre:'Estudio de factibilidad de parque eólico Achiras',tipologia: 'Civil', presupuesto:1900000000, comitente:'Genneia', duracion: 5 },
+    {nombre:'Proyecto ejecutivo planta de tratamiento de Efluentes cloacales',tipologia: 'Hidraulica', presupuesto:14000000000, comitente:'ENHOSA', duracion: 30 }
+]
+console.log (antecedentes)
+/* Obras Civiles de más de 12 meses de duracion */
+
+let civiles12Meses = antecedentes.filter((obra)=> obra.duracion >12 && obra.tipologia === 'Civil'
+);
+
+civiles12Meses.forEach((element)=>{
+    console.log (`Las obras civiles que superan los 12 meses son ${element.nombre}`)
+})
+
+/* Adicional nuevas obras y antecedentes*/
+let adicional = [
+    { nombre:'Viaducto Belgrano Sur',tipologia: 'Vial', presupuesto:7500000000, comitente:'Ferrocarriles Argentinos', duracion:23}
+]
+
+let salida = adicional.map ((elemento)=>{
+    antecedentes.push(elemento)
+})
+console.log (antecedentes)
