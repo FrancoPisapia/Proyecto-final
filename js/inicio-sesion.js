@@ -22,7 +22,6 @@ crearUsuario.addEventListener('click', agregarUsuario);
 function agregarUsuario (event){
     event.preventDefault();
 
-    console.log('Salida boton');
 
     let nombre = document.querySelector('#nombre').value;
     let nombreUsuario = document.querySelector('#usuario').value;

@@ -20,10 +20,10 @@
 
 
 
-
 let nombre = document.getElementById ("inputNombre").value;
 let apellido = document.getElementById ("inputApellido").value;
 let mail = document.getElementById ("inputMail").value;
+
 
  function formulario (){
 do {
@@ -40,14 +40,18 @@ do {
         let dispositivo = document.getElementById ("inputTel").value;
         let telefono = document.getElementById ("inputTelefono").value;
 
-        console.log('AAAA')
-    
+
+        
         const candidato1 = new Candidatos (nombre, apellido, mail,info, ciudad,  dispositivo, telefono);
 
         console.log (candidato1)
+        candidato1.presentacion()
+
         alert ("Mensaje enviado correctamente");
     })} while ( nombre != "" && apellido != "" && mail != "");
 }
+
+
  
 
-formulario ()
+formulario ();
