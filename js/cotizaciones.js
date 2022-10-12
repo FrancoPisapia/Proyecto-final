@@ -11,7 +11,7 @@ let trabajos_c;
 
 
 
-    // cotizador (obra);
+    cotizador (obra);
 
 
 
