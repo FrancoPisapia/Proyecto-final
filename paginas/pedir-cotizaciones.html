@@ -79,18 +79,18 @@
                           <div class="modal-body">
                                <form>
                                  <h5>Informacion requerida</h5>
-                                <label  class="col-12"><input type="text" id="presupuesto" placeholder="Presupuesto en pesos" required></label>
+                                <label  class="col-12"><input type="text" id="presupuestoVial" placeholder="Presupuesto en pesos" required></label>
                                 <label  class="col-12"><input type="text" id="longitud" placeholder="Longitud en kilometros" required></label>
                                  <h5> Anteproyecto</h5>
-                                <label class="col-12"><input type="checkbox" id="cbox1" value="first_checkbox">Obra báscia</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox2" value="second_checkbox">Señalización vertical y horizontal</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox3" value="third_checkbox">Iluminación</label>
+                                <label class="col-12 pl"><input type="checkbox" id="cbox1" value="Anteproyecto obra basica">Obra báscia</label>
+                                <label  class="col-12 pl"><input type="checkbox" id="cbox2" value="Anteproyecto señalizacion">Señalización vertical y horizontal</label>
+                                <label  class="col-12 pl"><input type="checkbox" id="cbox3" value="Anteproyecto iluminacion">Iluminación</label>
 
 
                                 <h5> Armado de licitacion</h5>
                                 <label for="licitacion">Tipo de licitación</label>
 
-                                <select name="licitaciones" id="eleccion-de-licitacion">
+                                <select name="licitaciones" id="eleccion-de-licitacion-vial">
                                     <option value="">--Please choose an option--</option>
                                     <option value="publica">Pública</option>
                                     <option value="privada">Privada</option>
@@ -100,14 +100,14 @@
 
 
                                 <h5> Proyecto ejecutivo</h5>
-                                <label class="col-12"><input type="checkbox" id="cbox6" value="6_checkbox">Obra báscia</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox7" value="7_checkbox">Señalización vertical y horizontal</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox8" value="8_checkbox">Iluminación</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox9" value="9_checkbox">Inspección de obra</label>
+                                <label class="col-12"><input type="checkbox" id="cbox6" value="ejecutivo obra basica">Obra báscia</label>
+                                <label  class="col-12"><input type="checkbox" id="cbox7" value="ejecutivo señalizacion">Señalización vertical y horizontal</label>
+                                <label  class="col-12"><input type="checkbox" id="cbox8" value="ejecutivo iluminacion">Iluminación</label>
+                                <label  class="col-12"><input type="checkbox" id="cbox9" value="ejecutivo inspeccion">Inspección de obra</label>
                                </form>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary disabled" data-bs-dismiss="modal">Aceptar</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="boton-vial">Aceptar</button>
                           </div>
                         </div>
                       </div>
@@ -138,7 +138,7 @@
                           <div class="modal-body">
                                <form action="">
                                  <h5>Informacion requerida</h5>
-                                <label  class="col-12"><input type="text" id="presupuesto" placeholder="Presupuesto en pesos" required></label>
+                                <label  class="col-12"><input type="text" id="presupuestoHidrico" placeholder="Presupuesto en pesos" required></label>
                                 <label  class="col-12"><input type="text" id="hidraulica" placeholder="Tipología de obra" required></label>
 
 
@@ -197,7 +197,7 @@
                           <div class="modal-body">
                                <form action="">
                                  <h5>Informacion requerida</h5>
-                                <label  class="col-12"><input type="text" id="presupuesto" placeholder="Presupuesto en pesos" required></label>
+                                <label  class="col-12"><input type="text" id="presupuestoCivil" placeholder="Presupuesto en pesos" required></label>
                                 <label  class="col-12"><input type="text" id="hidraulica" placeholder="Tipología edilicia" required></label>
 
 
@@ -275,7 +275,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-    <script src="../js/cotizaciones.js"></script>
+    <!-- <script src="../js/cotizaciones.js"></script> -->
+    <script src="../js/cotizaciones2.js"></script>
 </body>
 </html>
 
