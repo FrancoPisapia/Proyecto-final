@@ -82,9 +82,9 @@
                                 <label  class="col-12"><input type="text" id="presupuestoVial" placeholder="Presupuesto en pesos" required></label>
                                 <label  class="col-12"><input type="text" id="longitud" placeholder="Longitud en kilometros" required></label>
                                  <h5> Anteproyecto</h5>
-                                <label class="col-12 pl"><input type="checkbox" id="cbox1" value="Anteproyecto obra basica">Obra báscia</label>
-                                <label  class="col-12 pl"><input type="checkbox" id="cbox2" value="Anteproyecto señalizacion">Señalización vertical y horizontal</label>
-                                <label  class="col-12 pl"><input type="checkbox" id="cbox3" value="Anteproyecto iluminacion">Iluminación</label>
+                                <label class="col-12 pl"><input type="radio" id="cbox1" value="Anteproyecto obra basica" name="anteproyecto">Obra báscia</label>
+                                <label  class="col-12 pl"><input type="radio" id="cbox2" value="Anteproyecto señalizacion" name="anteproyecto">Señalización vertical y horizontal</label>
+                                <label  class="col-12 pl"><input type="radio" id="cbox3" value="Anteproyecto iluminacion" name="anteproyecto">Iluminación</label>
 
 
                                 <h5> Armado de licitacion</h5>
@@ -100,14 +100,14 @@
 
 
                                 <h5> Proyecto ejecutivo</h5>
-                                <label class="col-12"><input type="checkbox" id="cbox6" value="ejecutivo obra basica">Obra báscia</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox7" value="ejecutivo señalizacion">Señalización vertical y horizontal</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox8" value="ejecutivo iluminacion">Iluminación</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox9" value="ejecutivo inspeccion">Inspección de obra</label>
+                                <label class="col-12"><input type="radio" id="cbox6" value="ejecutivo obra basica" name="p-ejecutivo">Obra báscia</label>
+                                <label  class="col-12"><input type="radio" id="cbox7" value="ejecutivo señalizacion" name="p-ejecutivo">Señalización vertical y horizontal</label>
+                                <label  class="col-12"><input type="radio" id="cbox8" value="ejecutivo iluminacion" name="p-ejecutivo">Iluminación</label>
+                                <label  class="col-12"><input type="radio" id="cbox9" value="ejecutivo inspeccion" name="p-ejecutivo">Inspección de obra</label>
                                </form>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="boton-vial">Aceptar</button>
+                            <button type="button" class="btn btn-primary"  id="boton-vial" data-bs-dismiss="modal">Aceptar</button>
                           </div>
                         </div>
                       </div>
@@ -138,22 +138,23 @@
                           <div class="modal-body">
                                <form action="">
                                  <h5>Informacion requerida</h5>
-                                <label  class="col-12"><input type="text" id="presupuestoHidrico" placeholder="Presupuesto en pesos" required></label>
-                                <label  class="col-12"><input type="text" id="hidraulica" placeholder="Tipología de obra" required></label>
+                                <label  class="col-12"><input type="number" id="presupuestoHidrico" placeholder="Presupuesto en pesos" required></label>
+                                <label  class="col-12"><input type="number" id="cañerias" placeholder="longitud cañeria" required></label>
 
+                                <label  class="col-12"><input type="number" id="superficiePlanta" placeholder="Superficie Planta en m^2" required></label>
 
                                 
                                  <h5> Anteproyecto</h5>
-                                <label class="col-12"><input type="checkbox" id="cbox10" value="10_checkbox">Electromecánica</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox11" value="11_checkbox">Obra civil</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox12" value="12_checkbox">Unidades hidraúlicas</label>
+                                <label class="col-12"><input type="radio" id="cbox10" value="10_checkbox" name="anteproyecto">Electromecánica</label>
+                                <label  class="col-12"><input type="radio" id="cbox11" value="11_checkbox" name="anteproyecto">Obra civil</label>
+                                <label  class="col-12"><input type="radio" id="cbox12" value="12_checkbox" name="anteproyecto">Unidades hidraúlicas</label>
 
 
                                 <h5> Armado de licitacion</h5>
 
                                 <label for="licitacion">Tipo de licitación</label>
 
-                                <select name="licitaciones" id="eleccion-de-licitacion">
+                                <select name="licitaciones" id="eleccion-de-licitacion-h">
                                     <option value="">--Please choose an option--</option>
                                     <option value="publica">Pública</option>
                                     <option value="privada">Privada</option>
@@ -161,14 +162,14 @@
                                 </select>
 
                                 <h5> Proyecto ejecutivo</h5>
-                                <label class="col-12"><input type="checkbox" id="cbox13" value="13_checkbox">Electromecánica</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox14" value="14_checkbox">Obra civil</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox15" value="15_checkbox">Unidades hidraúlica</label>
-                                <label  class="col-12"><input type="checkbox" id="cbox16" value="16_checkbox">Inspección de obra</label>
+                                <label class="col-12"><input type="radio" id="cbox13" value="13_checkbox" name="p-ejecutivo">Electromecánica</label>
+                                <label  class="col-12"><input type="radio" id="cbox14" value="14_checkbox" name="p-ejecutivo">Obra civil</label>
+                                <label  class="col-12"><input type="radio" id="cbox15" value="15_checkbox" name="p-ejecutivo">Unidades hidraúlica</label>
+                                <label  class="col-12"><input type="radio" id="cbox16" value="16_checkbox" name="p-ejecutivo">Inspección de obra</label>
                                </form>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary disabled cotizar" data-bs-dismiss="modal" id="cotizar">Aceptar</button>
+                            <button type="button" class="btn btn-primary cotizar" data-bs-dismiss="modal" id="boton-hidraulica">Aceptar</button>
                           </div>
                         </div>
                       </div>
@@ -241,7 +242,14 @@
           
         </div>
 
-   
+        <div class="mensaje1 container-fluid">
+          
+        </div>
+
+        <div class="mensaje2 container-fluid">
+          
+        </div>
+
 
 
         </main>
@@ -275,8 +283,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-    <script src="../js/cotizaciones.js"></script>
-    <!-- <script src="../js/cotizaciones2.js"></script> -->
+    <!-- <script src="../js/cotizaciones.js"></script> -->
+    <script src="../js/cotizaciones2.js"></script>
 </body>
 </html>
 
