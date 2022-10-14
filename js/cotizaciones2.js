@@ -14,14 +14,15 @@ function cotizacionVial (event){
 
 function vialCheckbox (){
     let presupuesto = document.querySelector('#presupuestoVial').value;
+    //verificacionNumero (presupuesto)
     let longitud = document.querySelector('#longitud').value
-    console.log (parseFloat(longitud));
+    //verificacionNumero (longitud)
     let fondos = document.querySelector('#eleccion-de-licitacion-vial').value;
     console.log(fondos);
 
     let checked = document.querySelectorAll('input[type="radio"]:checked');
     let aCotizar = ([...checked].map(c=>c.value));
-    console.log(aCotizar);
+
     let mensaje1 
     let mensaje2
     
@@ -69,18 +70,96 @@ function cotizacionHidraulica(event){
     event.preventDefault()
 
     let presupuesto = document.querySelector('#presupuestoHidrico').value;
+    //verificacionNumero (presupuesto)
     let cañerias = document.querySelector('#cañerias').value;
+    //verificacionNumero (cañerias)
 
-    console.log(cañerias)
 
     let superficie = document.querySelector('#superficiePlanta').value;
-
+    //verificacionNumero (superficie)
     let fondos = document.querySelector('#eleccion-de-licitacion-h').value;
-    console.log(fondos);
+
 
     let checked = document.querySelectorAll('input[type="radio"]:checked');
     let aCotizar = ([...checked].map(c=>c.value));
-    console.log(aCotizar);
+
     let mensaje1 
     let mensaje2
+
+    let terminado = aCotizar.forEach((element) => {
+        if (element == "Anteproyecto Electromecanica"){
+            mensaje1 = ` El presupuesto por la obra electromecánica ${fondos} en anteproyecto es ${0.50*presupuesto*(superficie/cañerias)}`;
+            mensajeA.innerHTML = mensaje1
+        }else if( element== 'Anteproyecto obra civil'){
+            mensaje1 = `El presupuesto por la obra civil ${fondos} en anteproyecto es ${0.60*presupuesto*(superficie/cañerias)}`
+            mensajeA.innerHTML = mensaje1
+
+        }else if( element== 'Anteproyecto unidades hidraulicas'){
+            mensaje1 = `El presupuesto del movimiento de suelo y la estructura resistente es ${0.35 * presupuesto} por la obra electromecánica es ${presupuesto * 0.45}`
+            mensajeA.innerHTML = mensaje1
+        } else if (element== 'Proyecto ejecutivo electromecanico'){
+            mensaje2 = `El presupuesto por el proyecto ejecutivo de la obra electromecánica de una licitación ${fondos}  es ${0.50*presupuesto*(superficie/cañerias)}`
+            mensajeB.innerHTML = mensaje2
+        } else if (element== 'Proyecto ejecutivo obra civil'){
+            mensaje2 = `El presupuesto por el proyecto ejecutivo de la obra civil de una licitación ${fondos} es ${0.60*presupuesto*(superficie/cañerias)}`
+            mensajeB.innerHTML = mensaje2
+        }  else if (element== 'Proyecto ejecutivo unidades hidraulicas'){
+            mensaje2 = `El presupuesto del movimiento de suelo y la estructura resistente es ${0.33 * presupuesto} y por la obra electromecánica es ${presupuesto * 0.47}`
+            mensajeB.innerHTML = mensaje2
+        } else if (element== 'Inspeccion de obra'){
+            mensaje2 = `El presupuesto por la insepección de obra electromecánica es ${presupuesto * 0.015} y por la obra civil es ${presupuesto * 0.02}  en forma estimada`
+            mensajeB.innerHTML = mensaje2
+        }
+    })
+}
+
+/* Civil*/
+
+let botonCivil = document.querySelector('#botonCivil');
+
+botonCivil.addEventListener('click', cotizacionCivil);
+
+function cotizacionCivil (event){
+    event.preventDefault()
+
+    let presupuesto =parseFloat (document.querySelector('#presupuestoCivil').value) ;
+    verificacionNumero ( presupuesto);
+    console.log(presupuesto)
+    let pisos = document.querySelector('#cantPisos').value;
+    verificacionNumero (pisos);
+    console.log(typeof pisos)
+    let subsuelo = document.querySelector('#cantSubsuelos').value ;
+    console.log(typeof subsuelo)
+    verificacionNumero (subsuelo);
+
+    let fondos = document.querySelector('#eleccion-de-licitacion-c').value;
+
+    let checked = document.querySelectorAll('input[type="radio"]:checked');
+    let aCotizar = ([...checked].map(c=>c.value));
+
+    let mensaje1 
+    let mensaje2
+
+    
+    let terminado = aCotizar.forEach((element) => {
+        if (element == "Anteproyecto movimiento de suelos"){
+            mensaje1 = `El presupuesto para el movimiento de suelos para un edificio de ${subsuelo} es ${presupuesto*0.07*(subsuelo*2)}`;
+            mensajeA.innerHTML = mensaje1
+        } else if ( element == "Estructura y mamposteria"){
+            mensaje1 = `El presupuesto para la estructura y mamposteria de un edificio de ${subsuelo} y ${pisos} es ${presupuesto*0.16}`;
+            mensajeA.innerHTML = mensaje1
+        }
+    })
+}
+
+
+
+/* Verificacion */
+
+function verificacionNumero (dato){
+    if (isNaN (dato) ){
+        return alert ('Ingrese un número')
+    } else if ( dato <=0 ){
+        return alert ('Ingrese un número mayor a cero')
+    }
 }

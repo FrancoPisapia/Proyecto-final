@@ -40,7 +40,7 @@ function agregarUsuario (event){
     nombredeUsuario.innerHTML = nombreUsuario
     
     console.log(usuarios)
-
+    console.log(usuario)
 }
 
 
