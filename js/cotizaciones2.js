@@ -13,12 +13,13 @@ function cotizacionVial (event){
 }
 
 function vialCheckbox (){
-    let presupuesto = document.querySelector('#presupuestoVial').value;
-    //verificacionNumero (presupuesto)
-    let longitud = document.querySelector('#longitud').value
-    //verificacionNumero (longitud)
+    let presupuesto = parseFloat( document.querySelector('#presupuestoVial').value);
+    verificacionNumero (presupuesto);
+
+    let longitud = parseFloat ( document.querySelector('#longitud').value);
+    verificacionNumero (longitud);
+
     let fondos = document.querySelector('#eleccion-de-licitacion-vial').value;
-    console.log(fondos);
 
     let checked = document.querySelectorAll('input[type="radio"]:checked');
     let aCotizar = ([...checked].map(c=>c.value));
@@ -69,14 +70,16 @@ botonHidraulica.addEventListener('click', cotizacionHidraulica)
 function cotizacionHidraulica(event){
     event.preventDefault()
 
-    let presupuesto = document.querySelector('#presupuestoHidrico').value;
-    //verificacionNumero (presupuesto)
-    let cañerias = document.querySelector('#cañerias').value;
-    //verificacionNumero (cañerias)
+    let presupuesto = parseFloat( document.querySelector('#presupuestoHidrico').value);
+    verificacionNumero (presupuesto);
+
+    let cañerias = parseFloat ( document.querySelector('#cañerias').value);
+
+    verificacionNumero (cañerias)
 
 
-    let superficie = document.querySelector('#superficiePlanta').value;
-    //verificacionNumero (superficie)
+    let superficie = parseFloat( document.querySelector('#superficiePlanta').value);
+    verificacionNumero (superficie)
     let fondos = document.querySelector('#eleccion-de-licitacion-h').value;
 
 
@@ -125,12 +128,15 @@ function cotizacionCivil (event){
     let presupuesto =parseFloat (document.querySelector('#presupuestoCivil').value) ;
     verificacionNumero ( presupuesto);
     console.log(presupuesto)
-    let pisos = document.querySelector('#cantPisos').value;
+    let pisos = parseInt( document.querySelector('#cantPisos').value);
     verificacionNumero (pisos);
-    console.log(typeof pisos)
-    let subsuelo = document.querySelector('#cantSubsuelos').value ;
+
+    console.log(typeof pisos);
+
+
+    let subsuelo = parseInt( document.querySelector('#cantSubsuelos').value) ;
     console.log(typeof subsuelo)
-    verificacionNumero (subsuelo);
+    verificacionNumerosConCero (subsuelo);
 
     let fondos = document.querySelector('#eleccion-de-licitacion-c').value;
 
@@ -143,11 +149,23 @@ function cotizacionCivil (event){
     
     let terminado = aCotizar.forEach((element) => {
         if (element == "Anteproyecto movimiento de suelos"){
-            mensaje1 = `El presupuesto para el movimiento de suelos para un edificio de ${subsuelo} es ${presupuesto*0.07*(subsuelo*2)}`;
+            mensaje1 = `El presupuesto para el movimiento de suelos para un edificio de ${subsuelo} es ${presupuesto*0.07* (1+(subsuelo*2))} `
             mensajeA.innerHTML = mensaje1
         } else if ( element == "Estructura y mamposteria"){
             mensaje1 = `El presupuesto para la estructura y mamposteria de un edificio de ${subsuelo} y ${pisos} es ${presupuesto*0.16}`;
             mensajeA.innerHTML = mensaje1
+        } else if ( element == "Anteproyecto Terminaciones" ){
+            mensaje1 = `El presupuesto para las terminaciones del edificio de ${pisos} es ${presupuesto*0.22}`;
+            mensajeA.innerHTML = mensaje1
+        } else if (element == "Proyecto ejecutivo estructural "){
+            mensaje2 = `El presupuesto para la estructura de un edificio de ${subsuelo} y ${pisos} es ${presupuesto*0.20}`;
+            mensajeB.innerHTML = mensaje2
+        } else if (element == "Direccion de obraa"){
+            mensaje2 = `El presupuesto para la dirección de obra es ${presupuesto*0.01}`;
+            mensajeB.innerHTML = mensaje2
+        } else if (element == " Proyecto ejecutivo seguridad e higiene"){
+            mensaje2 = `El presupuesto para la seguridad e higiene en obra es ${presupuesto*0.005}`;
+            mensajeB.innerHTML = mensaje2
         }
     })
 }
@@ -160,6 +178,15 @@ function verificacionNumero (dato){
     if (isNaN (dato) ){
         return alert ('Ingrese un número')
     } else if ( dato <=0 ){
+        return alert ('Ingrese un número mayor a cero')
+    }
+}
+
+
+function verificacionNumerosConCero (dato){
+    if (isNaN (dato) ){
+        return alert ('Ingrese un número')
+    } else if ( dato <0 ){
         return alert ('Ingrese un número mayor a cero')
     }
 }

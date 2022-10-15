@@ -102,17 +102,17 @@
   margin-bottom: 20px;
 }
 
-iframe{
+iframe {
   max-width: 90%;
 }
-.centrado{
- text-align: center;
- justify-content: center;
- justify-items: center;
- padding: auto ;
- align-items: center;
- justify-self: center;
- align-self: center;
+.centrado {
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  padding: auto;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
 }
 .obras__imagenes__contenedor {
   position: relative;
@@ -153,20 +153,18 @@ iframe{
     right: 1%;
     z-index: 20;
 
-  
     @include size(200px, 300px);
   }
 
-  .centrado{
+  .centrado {
     text-align: center;
     justify-content: center;
     justify-items: center;
-    padding: auto ;
+    padding: auto;
     align-items: center;
     justify-self: center;
     align-self: center;
-   }
-  
+  }
 
   .obras__imagenes__contenedor {
     position: relative;

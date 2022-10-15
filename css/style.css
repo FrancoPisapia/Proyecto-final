@@ -510,7 +510,7 @@ iframe {
   padding-top: 50px; }
 
 form {
-  height: 500px; }
+  margin-bottom: 5px; }
 
 /****Inicio Desktop****/
 @media screen and (min-width: 992px) {
