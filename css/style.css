@@ -298,7 +298,7 @@ iframe {
 /****Fin Mobile****/
 /****Inicio Desktop****/
 @media screen and (min-width: 992px) {
-  form {
+  .form {
     height: 500px; }
   .clientes--positionSticky {
     top: 150px; }
@@ -514,7 +514,7 @@ form {
 
 /****Inicio Desktop****/
 @media screen and (min-width: 992px) {
-  form {
+  .form {
     height: 500px; }
   .clientes--positionSticky {
     top: 150px; }

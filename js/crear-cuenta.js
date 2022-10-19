@@ -23,6 +23,7 @@ let errorEmpresa = document.querySelector('#errorEmpresa');
 let errorCUIT = document.querySelector('#errorCUIT');
 let errorMail = document.querySelector('#errorMail');
 let errorContraseña = document.querySelector('#errorContraseña');
+let errorVerifContraseña = document.querySelector('#errorVerificacion');
 
 errorNombre.style.display = 'none';
 errorUsuario.style.display = 'none';
@@ -30,6 +31,7 @@ errorEmpresa.style.display = 'none';
 errorCUIT.style.display = 'none';
 errorMail.style.display = 'none';
 errorContraseña.style.display = 'none';
+errorVerifContraseña.style.display = 'none';
 
 
 crearUsuario.addEventListener('click', agregarUsuario);
@@ -44,12 +46,17 @@ function agregarUsuario (event){
     let cuit = document.querySelector('#cuit').value;
     let email = document.querySelector('#email').value;
     let password1 = document.querySelector('#password1').value;
+    let verifContraseña = document.querySelector('#verificacionContraseña').value;
+    
 
-    if (nombre && nombreUsuario && empresa && cuit && email && password1){
-        alert ('Valores ingresados')
+   
+
+    if (nombre && nombreUsuario && empresa && cuit && email && password1 && verifContraseña){
+        verifContrasenia (password1,  verifContraseña)
     } else {
         alert ('Ingresar todos los datos')
     }
+
 
     let usuario =  [{nombre , nombreUsuario, empresa, cuit,email,password1}];
 
@@ -199,4 +206,16 @@ password1.addEventListener ('input', (e) =>{
         errorContraseña.style.display = 'block';
         errorContraseña.innerHTML = 'La contraseña debe contar con 6 caracteres, un número y una mayuscula '
     }
+
+    
 })
+// Verificacion de contraseñas
+
+function verifContrasenia ( a ,b){
+    if (a==b){
+        alert ('Valores ingresados')
+    } else {
+        alert ('Las contraseñas deben ser iguales')
+    }
+}
+

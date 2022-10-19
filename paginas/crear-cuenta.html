@@ -85,14 +85,20 @@
                   <div id="errorMail" class="alert alert-danger" ></div>
                 </div>
                 <div class="mb-3">
-                  <label for="password1" class="form-label">Password</label>
+                  <label for="password1" class="form-label">Contraseña</label>
                   <input type="password" class="form-control" id="password1">
                   <div id="errorContraseña" class="alert alert-danger" ></div>
                 </div>
 
+                <div class="mb-3">
+                  <label for="verificacionContraseña" class="form-label">Verificacion de Contraseña</label>
+                  <input type="password" class="form-control" id="verificacionContraseña">
+                  <div id="errorVerificacion" class="alert alert-danger" ></div>
+                </div>
+
                 <button type="submit" class="btn btn-primary" id="crearUsuario">Enviar</button>
 
-                <div class="alert alert-warning my-5 maxWidth" role="alert"> 
+                <div class="alert alert-warning my-5 maxWidth mb-5" role="alert"> 
                   Bienvenido <span id="nombreUsuario"></span>
                 </div>
               </form>
