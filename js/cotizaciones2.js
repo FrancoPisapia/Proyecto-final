@@ -135,7 +135,6 @@ function cotizacionCivil (event){
 
 
     let subsuelo = parseInt( document.querySelector('#cantSubsuelos').value) ;
-    console.log(typeof subsuelo)
     verificacionNumerosConCero (subsuelo);
 
     let fondos = document.querySelector('#eleccion-de-licitacion-c').value;
@@ -174,19 +173,27 @@ function cotizacionCivil (event){
 
 /* Verificacion */
 
+
 function verificacionNumero (dato){
+    /*
     if (isNaN (dato) ){
         return alert ('Ingrese un número')
     } else if ( dato <=0 ){
         return alert ('Ingrese un número mayor a cero')
     }
+    */
+
+    isNaN (dato) ?  alert ('Ingrese un número') : dato <=0 ?  alert ('Ingrese un número mayor a cero') : false
 }
 
 
 function verificacionNumerosConCero (dato){
+   /*
     if (isNaN (dato) ){
         return alert ('Ingrese un número')
     } else if ( dato <0 ){
         return alert ('Ingrese un número mayor a cero')
     }
+    */
+    isNaN (dato) ?  alert ('Ingrese un número') : dato <0 ?  alert ('Ingrese un número mayor a cero') : false
 }

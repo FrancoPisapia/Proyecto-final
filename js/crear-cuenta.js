@@ -55,6 +55,7 @@ function agregarUsuario (event){
         // verifContrasenia (password1,  verifContraseña)
         if (password1==verifContraseña){
             alert ('Valores ingresados');
+            errorVerifContraseña.style.display = 'none';
             let usuario =  [{nombre , nombreUsuario, empresa, cuit,email,password1}];
 
             let salida = usuario.map((elemento, index)=>{
@@ -67,7 +68,8 @@ function agregarUsuario (event){
             console.log(usuarios)
             console.log(usuario)
         } else {
-            alert ('Las contraseñas deben ser iguales')
+            errorVerifContraseña.style.display = 'block';
+            errorVerifContraseña.innerHTML = 'Las contraseñas deben ser iguales ' 
         }
     } else {
         alert ('Ingresar todos los datos')
@@ -88,7 +90,7 @@ function agregarUsuario (event){
 }
 
 function agregarAllocalStorage (){
-    localStorage.setItem ("usuarios", JSON.stringify( usuarios))
+    localStorage.setItem (("usuarios", JSON.stringify(usuarios)) || [])
 }
 
 /* Validacion de datos */
@@ -125,6 +127,9 @@ const checkNumGuion= ( val )=>{
 }
 
 // Validaación Mail
+
+
+
 const checkMail= ( val )=>{
 
     if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(val)){
@@ -132,8 +137,9 @@ const checkMail= ( val )=>{
     } else {
         return false  
     }
-}
 
+
+}
 // Validación contraseña
 
 const checkContra= ( val )=>{
@@ -228,10 +234,15 @@ password1.addEventListener ('input', (e) =>{
 // Verificacion de contraseñas
 
 function verifContrasenia ( a ,b){
+
+    /*
     if (a==b){
         alert ('Valores ingresados')
     } else {
         alert ('Las contraseñas deben ser iguales')
     }
+    */
+
+    a==b ?  alert ('Valores ingresados') :  alert ('Las contraseñas deben ser iguales')
 }
 
