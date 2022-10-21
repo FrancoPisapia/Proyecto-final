@@ -90,7 +90,7 @@ function agregarUsuario (event){
 }
 
 function agregarAllocalStorage (){
-    localStorage.setItem (("usuarios", JSON.stringify(usuarios)) || [])
+    localStorage.setItem ("usuarios", JSON.stringify(usuarios)) 
 }
 
 /* Validacion de datos */
