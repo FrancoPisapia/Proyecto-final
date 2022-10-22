@@ -156,13 +156,13 @@ function cotizacionCivil (event){
         } else if ( element == "Anteproyecto Terminaciones" ){
             mensaje1 = `El presupuesto para las terminaciones del edificio de ${pisos} es ${presupuesto*0.22}`;
             mensajeA.innerHTML = mensaje1
-        } else if (element == "Proyecto ejecutivo estructural "){
+        } else if (element == "Proyecto ejecutivo estructural"){
             mensaje2 = `El presupuesto para la estructura de un edificio de ${subsuelo} y ${pisos} es ${presupuesto*0.20}`;
             mensajeB.innerHTML = mensaje2
-        } else if (element == "Direccion de obraa"){
+        } else if (element == "Direccion de obra"){
             mensaje2 = `El presupuesto para la dirección de obra es ${presupuesto*0.01}`;
             mensajeB.innerHTML = mensaje2
-        } else if (element == " Proyecto ejecutivo seguridad e higiene"){
+        } else if (element == "Proyecto ejecutivo seguridad e higiene"){
             mensaje2 = `El presupuesto para la seguridad e higiene en obra es ${presupuesto*0.005}`;
             mensajeB.innerHTML = mensaje2
         }
