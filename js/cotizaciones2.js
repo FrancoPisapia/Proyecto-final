@@ -1,5 +1,14 @@
+
+
+
+moment.locale('es');
+const hoy = moment().format ('D MMMM  YYYY');
+console.log (hoy);
+
 let mensajeA = document.querySelector ('.mensaje1');
 let mensajeB = document.querySelector ('.mensaje2');
+let mensajes = [];
+let cotizacionesViejas = document.querySelector('#cotizacionesViejas');
 /* Vial*/
 let botonVial = document.querySelector('#boton-vial');
 
@@ -30,36 +39,42 @@ function vialCheckbox (){
     let terminado = aCotizar.forEach((element) => {
 
         if (element == "Anteproyecto obra basica"){
-            mensaje1 = ` El presupuesto por obra básica ${fondos} en anteproyecto es ${longitud*0.015*presupuesto}`;
+            let total = longitud*0.015*presupuesto
+            mensaje1 = ` El presupuesto por obra básica ${fondos} en anteproyecto es ${total} al ${hoy}`;
             mensajeA.innerHTML = mensaje1
 
         } else if( element== 'Anteproyecto señalizacion'){
-            mensaje1 = `El presupuesto por señalizacion ${fondos} en anteproyecto es ${longitud*0.00015*presupuesto}`
+            let total = longitud*0.00015*presupuesto
+            mensaje1 = `El presupuesto por señalizacion ${fondos} en anteproyecto es ${total} al ${hoy}`
             mensajeA.innerHTML = mensaje1
 
         } else if( element == 'Anteproyecto iluminacion') {
-            console.log('cccc')
-            mensaje1 = `El presupuesto por iluminación ${fondos} en anteproyecto es ${longitud*0.00035*presupuesto}`
+            let total =longitud*0.00035*presupuesto;
+            mensaje1 = `El presupuesto por iluminación ${fondos} en anteproyecto es ${total} al ${hoy}`
             mensajeA.innerHTML = mensaje1
 
         } else if (element == 'ejecutivo obra basica'){
-            mensaje2 = `El presupuesto por obra básica ${fondos} en proyecto ejecutivo es ${longitud*0.4*presupuesto}`
+            let total2 = longitud*0.4*presupuesto
+            mensaje2 = `El presupuesto por obra básica ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
             mensajeB.innerHTML = mensaje2
         } else if (element == 'ejecutivo señalizacion'){
-            mensaje2 = `El presupuesto por señalización ${fondos} en proyecto ejecutivo es ${longitud*0.02*presupuesto}`
+            let total2 = longitud*0.02*presupuesto
+            mensaje2 = `El presupuesto por señalización ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
             mensajeB.innerHTML = mensaje2
         } else if (element == 'ejecutivo iluminacion'){
-            mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${longitud*0.05*presupuesto}`
+            let total2 = longitud*0.05*presupuesto
+            mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
             mensajeB.innerHTML = mensaje2
         } else if (element == 'ejecutivo inspeccion'){
-            mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${longitud*0.01*presupuesto}`
+            let total2=longitud*0.01*presupuesto
+            mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
             mensajeB.innerHTML = mensaje2
         }
 
  
        })
 
-
+       mensajeCotizaciones (mensajes,mensaje1, mensaje2);
 }
 
 /* Hidraulica*/
@@ -91,29 +106,42 @@ function cotizacionHidraulica(event){
 
     let terminado = aCotizar.forEach((element) => {
         if (element == "Anteproyecto Electromecanica"){
-            mensaje1 = ` El presupuesto por la obra electromecánica ${fondos} en anteproyecto es ${0.50*presupuesto*(superficie/cañerias)}`;
+            let total =0.50*presupuesto*(superficie/cañerias)
+            mensaje1 = ` El presupuesto por la obra electromecánica ${fondos} en anteproyecto es ${total} al ${hoy}`;
             mensajeA.innerHTML = mensaje1
         }else if( element== 'Anteproyecto obra civil'){
-            mensaje1 = `El presupuesto por la obra civil ${fondos} en anteproyecto es ${0.60*presupuesto*(superficie/cañerias)}`
+            let total =0.60*presupuesto*(superficie/cañerias)
+            mensaje1 = `El presupuesto por la obra civil ${fondos} en anteproyecto es ${total} al ${hoy}`
             mensajeA.innerHTML = mensaje1
 
         }else if( element== 'Anteproyecto unidades hidraulicas'){
-            mensaje1 = `El presupuesto del movimiento de suelo y la estructura resistente es ${0.35 * presupuesto} por la obra electromecánica es ${presupuesto * 0.45}`
+            let totalA =0.60*presupuesto*(superficie/cañerias)
+            let totalB = presupuesto * 0.45
+            mensaje1 = `El presupuesto del movimiento de suelo y la estructura resistente es ${totalA} por la obra electromecánica es ${totalB} al ${hoy}`
             mensajeA.innerHTML = mensaje1
         } else if (element== 'Proyecto ejecutivo electromecanico'){
-            mensaje2 = `El presupuesto por el proyecto ejecutivo de la obra electromecánica de una licitación ${fondos}  es ${0.50*presupuesto*(superficie/cañerias)}`
+            let total2 =0.50*presupuesto*(superficie/cañerias)
+            mensaje2 = `El presupuesto por el proyecto ejecutivo de la obra electromecánica de una licitación ${fondos}  es ${total2} al ${hoy}`
             mensajeB.innerHTML = mensaje2
         } else if (element== 'Proyecto ejecutivo obra civil'){
-            mensaje2 = `El presupuesto por el proyecto ejecutivo de la obra civil de una licitación ${fondos} es ${0.60*presupuesto*(superficie/cañerias)}`
+            let total2 = 0.60*presupuesto*(superficie/cañerias)
+            mensaje2 = `El presupuesto por el proyecto ejecutivo de la obra civil de una licitación ${fondos} es ${total2} al ${hoy}`
             mensajeB.innerHTML = mensaje2
         }  else if (element== 'Proyecto ejecutivo unidades hidraulicas'){
-            mensaje2 = `El presupuesto del movimiento de suelo y la estructura resistente es ${0.33 * presupuesto} y por la obra electromecánica es ${presupuesto * 0.47}`
+            let total2A = 0.33 * presupuesto
+            let total2B = presupuesto * 0.47
+            mensaje2 = `El presupuesto del movimiento de suelo y la estructura resistente es ${total2A} y por la obra electromecánica es ${total2B} al ${hoy}`
             mensajeB.innerHTML = mensaje2
         } else if (element== 'Inspeccion de obra'){
-            mensaje2 = `El presupuesto por la insepección de obra electromecánica es ${presupuesto * 0.015} y por la obra civil es ${presupuesto * 0.02}  en forma estimada`
+            let total2A = presupuesto * 0.015
+            let total2B = presupuesto * 0.02
+            mensaje2 = `El presupuesto por la insepección de obra electromecánica es ${total2A} y por la obra civil es ${total2B}  en forma estimada al ${hoy}`
             mensajeB.innerHTML = mensaje2
         }
+        
     })
+
+    mensajeCotizaciones (mensajes,mensaje1, mensaje2);
 }
 
 /* Civil*/
@@ -146,29 +174,39 @@ function cotizacionCivil (event){
     let mensaje2
 
     
+
+    
     let terminado = aCotizar.forEach((element) => {
         if (element == "Anteproyecto movimiento de suelos"){
-            mensaje1 = `El presupuesto para el movimiento de suelos para un edificio de ${subsuelo} es ${presupuesto*0.07* (1+(subsuelo*2))} `
+            let total = presupuesto*0.07* (1+(subsuelo*2))
+            mensaje1 = `El presupuesto para el movimiento de suelos para un edificio de ${subsuelo} es ${total} al ${hoy} `
             mensajeA.innerHTML = mensaje1
-        } else if ( element == "Estructura y mamposteria"){
-            mensaje1 = `El presupuesto para la estructura y mamposteria de un edificio de ${subsuelo} y ${pisos} es ${presupuesto*0.16}`;
+        } else if ( element == "Anteproyecto estructura y mamposteria"){
+            let total = presupuesto*0.16
+            mensaje1 = `El presupuesto para la estructura y mamposteria de un edificio de ${subsuelo} y ${pisos} es ${total} al ${hoy}`;
             mensajeA.innerHTML = mensaje1
         } else if ( element == "Anteproyecto Terminaciones" ){
-            mensaje1 = `El presupuesto para las terminaciones del edificio de ${pisos} es ${presupuesto*0.22}`;
+            let total = presupuesto*0.22
+            mensaje1 = `El presupuesto para las terminaciones del edificio de ${pisos} es ${total} al ${hoy}`;
             mensajeA.innerHTML = mensaje1
         } else if (element == "Proyecto ejecutivo estructural"){
-            mensaje2 = `El presupuesto para la estructura de un edificio de ${subsuelo} y ${pisos} es ${presupuesto*0.20}`;
+            let total2 = presupuesto*0.20
+            mensaje2 = `El presupuesto para la estructura de un edificio de ${subsuelo} y ${pisos} es ${total2} al ${hoy}`;
             mensajeB.innerHTML = mensaje2
         } else if (element == "Direccion de obra"){
-            mensaje2 = `El presupuesto para la dirección de obra es ${presupuesto*0.01}`;
+            let total2 = presupuesto*0.01
+            mensaje2 = `El presupuesto para la dirección de obra es ${total2} al ${hoy}`;
             mensajeB.innerHTML = mensaje2
         } else if (element == "Proyecto ejecutivo seguridad e higiene"){
-            mensaje2 = `El presupuesto para la seguridad e higiene en obra es ${presupuesto*0.005}`;
+            let total2 = presupuesto*0.005
+            mensaje2 = `El presupuesto para la seguridad e higiene en obra es ${total2} al ${hoy}`;
             mensajeB.innerHTML = mensaje2
         }
     })
-}
 
+
+mensajeCotizaciones (mensajes,mensaje1, mensaje2);
+}
 
 
 /* Verificacion */
@@ -196,4 +234,31 @@ function verificacionNumerosConCero (dato){
     }
     */
     isNaN (dato) ?  alert ('Ingrese un número') : dato <0 ?  alert ('Ingrese un número mayor a cero') : false
+}
+
+/* Agregar al JSON*/
+
+function agregarAllocalStorage (mens){
+    localStorage.setItem ("cotizaciones", JSON.stringify(mens)) 
+}
+
+function mensajeCotizaciones (m,m1,m2){
+    let mensajeFinal = []
+    mensajeFinal.push(m1,m2)
+    console.log(mensajeFinal)
+    let salida = mensajeFinal.map((elemento)=>{
+        m.push(elemento)
+    });
+    console.log (m);
+    agregarAllocalStorage (m)
+}
+
+cotizacionesViejas.addEventListener('click', cotViejas);
+
+function cotViejas (){
+    let cot = (JSON.parse(localStorage.getItem('cotizaciones')));
+    console.log (cot)
+     mensajeA.innerHTML = cot[0]
+     mensajeB.innerHTML = cot[1]
+
 }

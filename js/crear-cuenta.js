@@ -54,7 +54,11 @@ function agregarUsuario (event){
     if (nombre && nombreUsuario && empresa && cuit && email && password1 && verifContraseña){
         // verifContrasenia (password1,  verifContraseña)
         if (password1==verifContraseña){
-            alert ('Valores ingresados');
+            swal.fire({
+                title: 'Datos cargados correctamente',
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+            });
             errorVerifContraseña.style.display = 'none';
             let usuario =  [{nombre , nombreUsuario, empresa, cuit,email,password1}];
 
@@ -72,7 +76,12 @@ function agregarUsuario (event){
             errorVerifContraseña.innerHTML = 'Las contraseñas deben ser iguales ' 
         }
     } else {
-        alert ('Ingresar todos los datos')
+       
+        swal.fire({
+            title: 'Complete todos los datos',
+            icon: 'warning',
+            confirmButtonText: 'Aceptar',
+        })
     }
 
 
