@@ -3,7 +3,6 @@
 
 moment.locale('es');
 const hoy = moment().format ('D MMMM  YYYY');
-console.log (hoy);
 
 let mensajeA = document.querySelector ('.mensaje1');
 let mensajeB = document.querySelector ('.mensaje2');
@@ -159,7 +158,6 @@ function cotizacionCivil (event){
     let pisos = parseInt( document.querySelector('#cantPisos').value);
     verificacionNumero (pisos);
 
-    console.log(typeof pisos);
 
 
     let subsuelo = parseInt( document.querySelector('#cantSubsuelos').value) ;
@@ -245,11 +243,9 @@ function agregarAllocalStorage (mens){
 function mensajeCotizaciones (m,m1,m2){
     let mensajeFinal = []
     mensajeFinal.push(m1,m2)
-    console.log(mensajeFinal)
     let salida = mensajeFinal.map((elemento)=>{
         m.push(elemento)
     });
-    console.log (m);
     agregarAllocalStorage (m)
 }
 
@@ -257,8 +253,13 @@ cotizacionesViejas.addEventListener('click', cotViejas);
 
 function cotViejas (){
     let cot = (JSON.parse(localStorage.getItem('cotizaciones')));
-    console.log (cot)
-     mensajeA.innerHTML = cot[0]
-     mensajeB.innerHTML = cot[1]
+    let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
+    cot.forEach ((element,index) => {
+        insertarCotizacionesRealizadas.innerHTML += `<p> ${index+1}-${element} </p>`
+    })
+    
 
 }
+
+
+

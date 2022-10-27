@@ -36,7 +36,7 @@ errorVerifContraseña.style.display = 'none';
 
 crearUsuario.addEventListener('click', agregarUsuario);
 
-function agregarUsuario (event){
+ function agregarUsuario (event){
     event.preventDefault();
 
 
@@ -254,4 +254,3 @@ function verifContrasenia ( a ,b){
 
     a==b ?  alert ('Valores ingresados') :  alert ('Las contraseñas deben ser iguales')
 }
-
