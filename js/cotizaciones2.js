@@ -3,11 +3,34 @@
 
 moment.locale('es');
 const hoy = moment().format ('D MMMM  YYYY');
+const ayer = moment().subtract(1, 'days').format ('YYYY-MM-DD');
 
 let mensajeA = document.querySelector ('.mensaje1');
 let mensajeB = document.querySelector ('.mensaje2');
 let mensajes = [];
 let cotizacionesViejas = document.querySelector('#cotizacionesViejas');
+let mensajeDolar= document.querySelector('#mensajeDolar')
+
+/* Promesa API banco central */
+
+fetch('https://api.estadisticasbcra.com/usd_of', {
+    headers: {
+        Authorization: 
+        'BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTg1MzM4ODAsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmcmFuY28ucGlzYXBpYTQwNUBnbWFpbC5jb20ifQ.EfTIQVeMq7TsM0_Uz8JDgfcZy3WUpSNbmUK35xeJ8dbWqfEOR-FFedSELDYbF-B4yIK0blIBpj6c3s6Ahmhoqw',
+    }
+})
+.then( response =>{
+    response.json()
+        .then(data =>{ 
+            // const { 5072 } = data;
+            const dolarAyer = data.find( element => element.d === ayer )
+            const dolar = dolarAyer.v
+            mensajeDolar.append(`La cotización del dolar ofical Banco Nacion es U$D${dolar}`)
+
+        })
+})
+
+
 /* Vial*/
 let botonVial = document.querySelector('#boton-vial');
 
@@ -260,6 +283,8 @@ function cotViejas (){
     
 
 }
+
+
 
 
 
