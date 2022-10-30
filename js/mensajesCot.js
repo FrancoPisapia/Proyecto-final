@@ -157,24 +157,3 @@ fetch('https://api.estadisticasbcra.com/usd_of', {
         })
 })
 
-const valorDolar = async() => {
-
-    try{
-        const response = await fetch('https://api.estadisticasbcra.com/usd_of', {
-            headers: {
-                Authorization: 
-                'BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTg1MzM4ODAsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmcmFuY28ucGlzYXBpYTQwNUBnbWFpbC5jb20ifQ.EfTIQVeMq7TsM0_Uz8JDgfcZy3WUpSNbmUK35xeJ8dbWqfEOR-FFedSELDYbF-B4yIK0blIBpj6c3s6Ahmhoqw',
-            }
-        })
-        if (!response){
-            throw new Error (`HTTP error status : ${response.status}`)
-        }
-        const data = await  response.json()
-        const dolarAyer = data.find( element => element.d === ayer )
-            console.log(data)
-            const dolar = dolarAyer.v
-            mensajeDolar.append(`La cotización del dolar ofical Banco Nacion es U$D${dolar}`)
-    } catch (error){
-        alert('No se puede ingresar a la API')
-    }
-}
