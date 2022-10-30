@@ -1,17 +1,45 @@
 
-
+import {mensajeVial,mensajeHidraulico, mensajeCivil} from './mensajesCot.js'
 
 moment.locale('es');
-const hoy = moment().format ('D MMMM  YYYY');
-const ayer = moment().subtract(1, 'days').format ('YYYY-MM-DD');
+export const hoy = moment().format ('D MMMM  YYYY');
+const ayer = moment().subtract(2, 'days').format ('YYYY-MM-DD');
 
-let mensajeA = document.querySelector ('.mensaje1');
-let mensajeB = document.querySelector ('.mensaje2');
-let mensajes = [];
+export let mensajeA = document.querySelector ('.mensaje1');
+export let mensajeB = document.querySelector ('.mensaje2');
+export let mensajes = [];
 let cotizacionesViejas = document.querySelector('#cotizacionesViejas');
 let mensajeDolar= document.querySelector('#mensajeDolar')
 
-/* Promesa API banco central */
+/* Promesa API banco central (SOLO 100 CONSULTAS DAIRIAS)*/
+// Con try
+/*
+const valorDolar = async() => {
+
+    try{
+        const response = await fetch('https://api.estadisticasbcra.com/usd_of', {
+            headers: {
+                Authorization: 
+                'BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTg1MzM4ODAsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmcmFuY28ucGlzYXBpYTQwNUBnbWFpbC5jb20ifQ.EfTIQVeMq7TsM0_Uz8JDgfcZy3WUpSNbmUK35xeJ8dbWqfEOR-FFedSELDYbF-B4yIK0blIBpj6c3s6Ahmhoqw',
+            }
+        })
+        if (!response){
+            throw new Error (`HTTP error status : ${response.status}`)
+        }
+        const data = await  response.json()
+        const dolarAyer = data.find( element => element.d === ayer )
+            console.log(data)
+            const dolar = dolarAyer.v
+            mensajeDolar.append(`La cotización del dolar ofical Banco Nacion es U$D${dolar}`)
+    } catch (error){
+        alert('No se puede ingresar a la API')
+    }
+}
+valorDolar()
+
+*/
+
+// Tradicional
 
 fetch('https://api.estadisticasbcra.com/usd_of', {
     headers: {
@@ -22,8 +50,8 @@ fetch('https://api.estadisticasbcra.com/usd_of', {
 .then( response =>{
     response.json()
         .then(data =>{ 
-            // const { 5072 } = data;
             const dolarAyer = data.find( element => element.d === ayer )
+            console.log(data)
             const dolar = dolarAyer.v
             mensajeDolar.append(`La cotización del dolar ofical Banco Nacion es U$D${dolar}`)
 
@@ -38,7 +66,9 @@ botonVial.addEventListener('click', cotizacionVial);
 
 function cotizacionVial (event){
     event.preventDefault()
-     vialCheckbox ();
+    
+
+    vialCheckbox ();
 
 
 }
@@ -55,49 +85,50 @@ function vialCheckbox (){
     let checked = document.querySelectorAll('input[type="radio"]:checked');
     let aCotizar = ([...checked].map(c=>c.value));
 
-    let mensaje1 
-    let mensaje2
+
+    verifVial (presupuesto, longitud, fondos,checked)
+    /*
+        let terminado = aCotizar.forEach((element) => {
+            
     
-    let terminado = aCotizar.forEach((element) => {
+            if (element == "Anteproyecto obra basica"){
+                let total = longitud*0.015*presupuesto
+                mensaje1 = ` El presupuesto por obra básica ${fondos} en anteproyecto es ${total} al ${hoy}`;
+                mensajeA.innerHTML = mensaje1
 
-        if (element == "Anteproyecto obra basica"){
-            let total = longitud*0.015*presupuesto
-            mensaje1 = ` El presupuesto por obra básica ${fondos} en anteproyecto es ${total} al ${hoy}`;
-            mensajeA.innerHTML = mensaje1
+            } else if( element== 'Anteproyecto señalizacion'){
+                let total = longitud*0.00015*presupuesto
+                mensaje1 = `El presupuesto por señalizacion ${fondos} en anteproyecto es ${total} al ${hoy}`
+                mensajeA.innerHTML = mensaje1
 
-        } else if( element== 'Anteproyecto señalizacion'){
-            let total = longitud*0.00015*presupuesto
-            mensaje1 = `El presupuesto por señalizacion ${fondos} en anteproyecto es ${total} al ${hoy}`
-            mensajeA.innerHTML = mensaje1
+            } else if( element == 'Anteproyecto iluminacion') {
+                let total =longitud*0.00035*presupuesto;
+                mensaje1 = `El presupuesto por iluminación ${fondos} en anteproyecto es ${total} al ${hoy}`
+                mensajeA.innerHTML = mensaje1
 
-        } else if( element == 'Anteproyecto iluminacion') {
-            let total =longitud*0.00035*presupuesto;
-            mensaje1 = `El presupuesto por iluminación ${fondos} en anteproyecto es ${total} al ${hoy}`
-            mensajeA.innerHTML = mensaje1
+            } else if (element == 'ejecutivo obra basica'){
+                let total2 = longitud*0.4*presupuesto
+                mensaje2 = `El presupuesto por obra básica ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
+                mensajeB.innerHTML = mensaje2
+            } else if (element == 'ejecutivo señalizacion'){
+                let total2 = longitud*0.02*presupuesto
+                mensaje2 = `El presupuesto por señalización ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
+                mensajeB.innerHTML = mensaje2
+            } else if (element == 'ejecutivo iluminacion'){
+                let total2 = longitud*0.05*presupuesto
+                mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
+                mensajeB.innerHTML = mensaje2
+            } else if (element == 'ejecutivo inspeccion'){
+                let total2=longitud*0.01*presupuesto
+                mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
+                mensajeB.innerHTML = mensaje2
+            }
 
-        } else if (element == 'ejecutivo obra basica'){
-            let total2 = longitud*0.4*presupuesto
-            mensaje2 = `El presupuesto por obra básica ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
-            mensajeB.innerHTML = mensaje2
-        } else if (element == 'ejecutivo señalizacion'){
-            let total2 = longitud*0.02*presupuesto
-            mensaje2 = `El presupuesto por señalización ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
-            mensajeB.innerHTML = mensaje2
-        } else if (element == 'ejecutivo iluminacion'){
-            let total2 = longitud*0.05*presupuesto
-            mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
-            mensajeB.innerHTML = mensaje2
-        } else if (element == 'ejecutivo inspeccion'){
-            let total2=longitud*0.01*presupuesto
-            mensaje2 = `El presupuesto por iluminación ${fondos} en proyecto ejecutivo es ${total2} al ${hoy}`
-            mensajeB.innerHTML = mensaje2
-        }
+    
+        })
 
- 
-       })
-
-       mensajeCotizaciones (mensajes,mensaje1, mensaje2);
-}
+        mensajeCotizaciones (mensajes,mensaje1, mensaje2);*/
+    }
 
 /* Hidraulica*/
 let botonHidraulica = document.querySelector('#boton-hidraulica');
@@ -121,11 +152,11 @@ function cotizacionHidraulica(event){
 
 
     let checked = document.querySelectorAll('input[type="radio"]:checked');
-    let aCotizar = ([...checked].map(c=>c.value));
+    // let aCotizar = ([...checked].map(c=>c.value));
 
-    let mensaje1 
-    let mensaje2
 
+    verifResto (presupuesto, cañerias, superficie ,fondos, checked,mensajeHidraulico)
+    /*
     let terminado = aCotizar.forEach((element) => {
         if (element == "Anteproyecto Electromecanica"){
             let total =0.50*presupuesto*(superficie/cañerias)
@@ -163,7 +194,7 @@ function cotizacionHidraulica(event){
         
     })
 
-    mensajeCotizaciones (mensajes,mensaje1, mensaje2);
+    mensajeCotizaciones (mensajes,mensaje1, mensaje2);*/
 }
 
 /* Civil*/
@@ -177,7 +208,6 @@ function cotizacionCivil (event){
 
     let presupuesto =parseFloat (document.querySelector('#presupuestoCivil').value) ;
     verificacionNumero ( presupuesto);
-    console.log(presupuesto)
     let pisos = parseInt( document.querySelector('#cantPisos').value);
     verificacionNumero (pisos);
 
@@ -189,14 +219,12 @@ function cotizacionCivil (event){
     let fondos = document.querySelector('#eleccion-de-licitacion-c').value;
 
     let checked = document.querySelectorAll('input[type="radio"]:checked');
-    let aCotizar = ([...checked].map(c=>c.value));
+    // let aCotizar = ([...checked].map(c=>c.value));
 
-    let mensaje1 
-    let mensaje2
 
     
-
-    
+    verifResto (presupuesto, pisos, subsuelo ,fondos, checked,mensajeCivil)
+    /*
     let terminado = aCotizar.forEach((element) => {
         if (element == "Anteproyecto movimiento de suelos"){
             let total = presupuesto*0.07* (1+(subsuelo*2))
@@ -226,7 +254,7 @@ function cotizacionCivil (event){
     })
 
 
-mensajeCotizaciones (mensajes,mensaje1, mensaje2);
+mensajeCotizaciones (mensajes,mensaje1, mensaje2);*/
 }
 
 
@@ -259,11 +287,11 @@ function verificacionNumerosConCero (dato){
 
 /* Agregar al JSON*/
 
-function agregarAllocalStorage (mens){
+export function agregarAllocalStorage (mens){
     localStorage.setItem ("cotizaciones", JSON.stringify(mens)) 
 }
 
-function mensajeCotizaciones (m,m1,m2){
+export function mensajeCotizaciones (m,m1,m2){
     let mensajeFinal = []
     mensajeFinal.push(m1,m2)
     let salida = mensajeFinal.map((elemento)=>{
@@ -280,9 +308,37 @@ function cotViejas (){
     cot.forEach ((element,index) => {
         insertarCotizacionesRealizadas.innerHTML += `<p> ${index+1}-${element} </p>`
     })
-    
+
 
 }
+
+/* Verif civi*/
+
+function verifVial (pre, long, fin, che){
+    if (pre && long && fin && che){
+        mensajeVial (pre,long, fin,che)
+    } else {
+        swal.fire({
+            title: 'Completar todos los datos',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
+    }
+}
+
+/* Verif Hid y civil*/
+function verifResto (pre, can, sup ,fin, che, verificacion){
+    if (pre && can && sup && fin && che){
+        verificacion (pre,can,sup,fin)
+    } else {
+        swal.fire({
+            title: 'Complete todos los rangos',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
+    }
+}
+
 
 
 
