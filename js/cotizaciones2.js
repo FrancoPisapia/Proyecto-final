@@ -261,7 +261,7 @@ mensajeCotizaciones (mensajes,mensaje1, mensaje2);*/
 /* Verificacion */
 
 
-function verificacionNumero (dato){
+export function verificacionNumero (dato){
 /*
     if (isNaN (dato) ){
         return alert ('Ingrese un número')
@@ -274,7 +274,7 @@ function verificacionNumero (dato){
 }
 
 
-function verificacionNumerosConCero (dato){
+export function verificacionNumerosConCero (dato){
    /*
     if (isNaN (dato) ){
         return alert ('Ingrese un número')
@@ -298,25 +298,28 @@ export function mensajeCotizaciones (m,m1,m2){
         m.push(elemento)
         
     });
+
     agregarAllocalStorage (m)
 }
 
 cotizacionesViejas.addEventListener('click', cotViejas);
 
 
-
+// Devuelve las cotizaciones viejas
 function cotViejas (){
+
     let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
     let cot = (JSON.parse(localStorage.getItem('cotizaciones')));
     cot.forEach ((element,index) => {
-        insertarCotizacionesRealizadas.innerHTML += `<p class = 'hijos${index}'> ${index+1}-${element} </p>`
+        insertarCotizacionesRealizadas.innerHTML += `<p class = 'hijos${index+1}'> ${index+1}-${element} </p>`
+
     })
-    
+    // insertarCotizacionesRealizadas.innerHTML = `${cot}`
 }
 
 
 
-/* Verif civi*/
+/* Verif vial*/
 
 function verifVial (pre, long, fin, che){
     if (pre && long && fin && che){
