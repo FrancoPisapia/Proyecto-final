@@ -1,5 +1,7 @@
-import cotizaciones from './cotizaciones2.js'
+// import {hoy, hoy2, mensajeA, mensajeB,mensajes,valorDolar,botonVial, cotizacionVial,cotizacionHidraulica,botonHidraulica,botonCivil,cotizacionCivil,agregarAllocalStorage,mensajeCotizaciones} from './cotizaciones2.js'
 
-import formulario from './formularios.js'
+// import {mensajeVial,mensajeHidraulico, mensajeCivil} from './mensajesCot.js'
 
-import agregarUsuario from './crear-cuenta.js'
+
+
+// import {agregarUsuario,agregarAllocalStorage2, checkContra,checkMail, checkNumGuion,checkTextoyNumero8Caract, checkTextoMayorAUno,crearUsuario,nombredeUsuario,errorNombre,verifContrasenia} from './crear-cuenta.js'

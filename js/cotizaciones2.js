@@ -3,8 +3,9 @@ import {mensajeVial,mensajeHidraulico, mensajeCivil} from './mensajesCot.js'
 
 moment.locale('es');
 export const hoy = moment().format ('D MMMM  YYYY');
-const ayer = moment().subtract(2, 'days').format ('YYYY-MM-DD');
-
+export const hoy2 = moment().format ('YYYY-MM-DD');
+const ayer = moment().subtract(1, 'days').format ('YYYY-MM-DD');
+console.log(ayer)
 export let mensajeA = document.querySelector ('.mensaje1');
 export let mensajeB = document.querySelector ('.mensaje2');
 export let mensajes = [];
@@ -13,11 +14,11 @@ let mensajeDolar= document.querySelector('#mensajeDolar')
 
 /* Promesa API banco central (SOLO 100 CONSULTAS DAIRIAS)*/
 // Con try
-/*
-const valorDolar = async() => {
+
+export const valorDolar = async() => {
 
     try{
-        const response = await fetch('https://api.estadisticasbcra.com/usd_of', {
+        const response = await fetch('https://api.estadisticasbcra.com/usd_of_minorista', {
             headers: {
                 Authorization: 
                 'BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTg1MzM4ODAsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmcmFuY28ucGlzYXBpYTQwNUBnbWFpbC5jb20ifQ.EfTIQVeMq7TsM0_Uz8JDgfcZy3WUpSNbmUK35xeJ8dbWqfEOR-FFedSELDYbF-B4yIK0blIBpj6c3s6Ahmhoqw',
@@ -27,9 +28,9 @@ const valorDolar = async() => {
             throw new Error (`HTTP error status : ${response.status}`)
         }
         const data = await  response.json()
-        const dolarAyer = data.find( element => element.d === ayer )
+        const dolarActual = (data.find( element => element.d === hoy2 ) || data.find( element => element.d === ayer ))
             console.log(data)
-            const dolar = dolarAyer.v
+            const dolar = dolarActual.v
             mensajeDolar.append(`La cotización del dolar ofical Banco Nacion es U$D${dolar}`)
     } catch (error){
         alert('No se puede ingresar a la API')
@@ -37,10 +38,10 @@ const valorDolar = async() => {
 }
 valorDolar()
 
-*/
+
 
 // Tradicional
-
+/*
 fetch('https://api.estadisticasbcra.com/usd_of', {
     headers: {
         Authorization: 
@@ -50,21 +51,20 @@ fetch('https://api.estadisticasbcra.com/usd_of', {
 .then( response =>{
     response.json()
         .then(data =>{ 
-            const dolarAyer = data.find( element => element.d === ayer )
-            console.log(data)
-            const dolar = dolarAyer.v
+            const dolarActual = (data.find( element => element.d === hoy2 ) || data.find( element => element.d === ayer ))
+            const dolar = dolarActual.v
             mensajeDolar.append(`La cotización del dolar ofical Banco Nacion es U$D${dolar}`)
 
         })
 })
-
+*/
 
 /* Vial*/
-let botonVial = document.querySelector('#boton-vial');
+export let botonVial = document.querySelector('#boton-vial');
 
 botonVial.addEventListener('click', cotizacionVial);
 
-function cotizacionVial (event){
+export function cotizacionVial (event){
     event.preventDefault()
     
 
@@ -131,11 +131,11 @@ function vialCheckbox (){
     }
 
 /* Hidraulica*/
-let botonHidraulica = document.querySelector('#boton-hidraulica');
+export let botonHidraulica = document.querySelector('#boton-hidraulica');
 
 botonHidraulica.addEventListener('click', cotizacionHidraulica)
 
-function cotizacionHidraulica(event){
+export function cotizacionHidraulica(event){
     event.preventDefault()
 
     let presupuesto = parseFloat( document.querySelector('#presupuestoHidrico').value);
@@ -199,11 +199,11 @@ function cotizacionHidraulica(event){
 
 /* Civil*/
 
-let botonCivil = document.querySelector('#botonCivil');
+export let botonCivil = document.querySelector('#botonCivil');
 
 botonCivil.addEventListener('click', cotizacionCivil);
 
-function cotizacionCivil (event){
+export function cotizacionCivil (event){
     event.preventDefault()
 
     let presupuesto =parseFloat (document.querySelector('#presupuestoCivil').value) ;
@@ -262,14 +262,14 @@ mensajeCotizaciones (mensajes,mensaje1, mensaje2);*/
 
 
 function verificacionNumero (dato){
-    /*
+/*
     if (isNaN (dato) ){
         return alert ('Ingrese un número')
     } else if ( dato <=0 ){
         return alert ('Ingrese un número mayor a cero')
     }
-    */
 
+*/
     isNaN (dato) ?  alert ('Ingrese un número') : dato <=0 ?  alert ('Ingrese un número mayor a cero') : false
 }
 
@@ -296,21 +296,25 @@ export function mensajeCotizaciones (m,m1,m2){
     mensajeFinal.push(m1,m2)
     let salida = mensajeFinal.map((elemento)=>{
         m.push(elemento)
+        
     });
     agregarAllocalStorage (m)
 }
 
 cotizacionesViejas.addEventListener('click', cotViejas);
 
+
+let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
+
 function cotViejas (){
+    // let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
     let cot = (JSON.parse(localStorage.getItem('cotizaciones')));
-    let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
     cot.forEach ((element,index) => {
-        insertarCotizacionesRealizadas.innerHTML += `<p> ${index+1}-${element} </p>`
+        insertarCotizacionesRealizadas.innerHTML += `<p class = 'hijos${index}'> ${index+1}-${element} </p>`
     })
-
-
+    
 }
+
 
 /* Verif civi*/
 

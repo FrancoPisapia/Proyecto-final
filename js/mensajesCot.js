@@ -1,4 +1,4 @@
-import {agregarAllocalStorage,mensajeCotizaciones,mensajes,mensajeA,mensajeB,hoy} from './cotizaciones2.js '
+import {mensajeCotizaciones,mensajes,mensajeA,mensajeB,hoy} from './cotizaciones2.js '
 export function mensajeVial (p,l,f){
     
 
@@ -140,6 +140,8 @@ export function mensajeCivil (p,pi,s){
 mensajeCotizaciones (mensajes,mensaje1, mensaje2);
 }
 
+/*
+
 fetch('https://api.estadisticasbcra.com/usd_of', {
     headers: {
         Authorization: 
@@ -157,3 +159,4 @@ fetch('https://api.estadisticasbcra.com/usd_of', {
         })
 })
 
+*/

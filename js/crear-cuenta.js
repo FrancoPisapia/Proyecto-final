@@ -1,6 +1,6 @@
 
 
-let usuarios = [];
+ let usuarios = [];
 
 
 // class Usuarios {
@@ -14,16 +14,16 @@ let usuarios = [];
 //     }
 // }
 
-let crearUsuario = document.querySelector('#crearUsuario');
-let nombredeUsuario = document.querySelector('#nombreUsuario');
+ let crearUsuario = document.querySelector('#crearUsuario');
+ let nombredeUsuario = document.querySelector('#nombreUsuario');
 
-let errorNombre = document.querySelector('#errorNombre');
-let errorUsuario = document.querySelector('#errorUsuario');
-let errorEmpresa = document.querySelector('#errorEmpresa');
-let errorCUIT = document.querySelector('#errorCUIT');
-let errorMail = document.querySelector('#errorMail');
-let errorContraseña = document.querySelector('#errorContraseña');
-let errorVerifContraseña = document.querySelector('#errorVerificacion');
+ let errorNombre = document.querySelector('#errorNombre');
+ let errorUsuario = document.querySelector('#errorUsuario');
+ let errorEmpresa = document.querySelector('#errorEmpresa');
+ let errorCUIT = document.querySelector('#errorCUIT');
+ let errorMail = document.querySelector('#errorMail');
+ let errorContraseña = document.querySelector('#errorContraseña');
+ let errorVerifContraseña = document.querySelector('#errorVerificacion');
 
 errorNombre.style.display = 'none';
 errorUsuario.style.display = 'none';
@@ -66,7 +66,7 @@ crearUsuario.addEventListener('click', agregarUsuario);
                 usuarios.push(elemento)
             });
         
-            agregarAllocalStorage ()
+            agregarAllocalStorage2 ()
             nombredeUsuario.innerHTML = nombreUsuario
             
             console.log(usuarios)
@@ -91,14 +91,14 @@ crearUsuario.addEventListener('click', agregarUsuario);
     //     usuarios.push(elemento)
     // });
 
-    // agregarAllocalStorage ()
+    // agregarAllocalStorage2 ()
     // nombredeUsuario.innerHTML = nombreUsuario
     
     // console.log(usuarios)
     // console.log(usuario)
 }
 
-function agregarAllocalStorage (){
+ function agregarAllocalStorage2 (){
     localStorage.setItem ("usuarios", JSON.stringify(usuarios)) 
 }
 
@@ -106,7 +106,7 @@ function agregarAllocalStorage (){
 
 // Funcion que valida solo texto y de longitud mayori igual a 1 
 
-const checkTextoMayorAUno = ( val )=>{
+ const checkTextoMayorAUno = ( val )=>{
 
     if (/[a-zA-Z]+$/.test(val) && val.length >=1){
         return true
@@ -116,7 +116,7 @@ const checkTextoMayorAUno = ( val )=>{
 }
 
 // Funcion validacion texto y numeros de 4 caracteres
-const checkTextoyNumero8Caract= ( val )=>{
+ const checkTextoyNumero8Caract= ( val )=>{
 
     if (/[A-Za-z0-9]+$/.test(val) && val.length >=3 ){
         return true
@@ -126,7 +126,7 @@ const checkTextoyNumero8Caract= ( val )=>{
 }
 
 // Función validacion de numeros sin guion
-const checkNumGuion= ( val )=>{
+ const checkNumGuion= ( val )=>{
 
     if (/([0-9])+$/.test(val) && val.length >=10 ){
         return true
@@ -139,7 +139,7 @@ const checkNumGuion= ( val )=>{
 
 
 
-const checkMail= ( val )=>{
+ const checkMail= ( val )=>{
 
     if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(val)){
         return true
@@ -151,7 +151,7 @@ const checkMail= ( val )=>{
 }
 // Validación contraseña
 
-const checkContra= ( val )=>{
+ const checkContra= ( val )=>{
 
 
     
@@ -241,8 +241,7 @@ password1.addEventListener ('input', (e) =>{
     
 })
 // Verificacion de contraseñas
-
-function verifContrasenia ( a ,b){
+ function verifContrasenia ( a ,b){
 
     /*
     if (a==b){
