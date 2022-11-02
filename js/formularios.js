@@ -42,7 +42,6 @@ function formulario (e) {
 
     if( nombre && apellido && mail && info && ciudad && dispositivo && telefono){
         const candidato = new Candidatos (nombre, apellido, mail,info, ciudad,  dispositivo, telefono)
-        console.log(candidato)
         candidatos.push(candidato)
         agregarAllocalStorage1 ()
     } 
