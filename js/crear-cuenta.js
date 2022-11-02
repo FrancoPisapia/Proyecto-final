@@ -1,6 +1,6 @@
 
 
- let usuarios = [];
+ export let usuarios = [];
 
 
 // class Usuarios {
@@ -14,16 +14,16 @@
 //     }
 // }
 
- let crearUsuario = document.querySelector('#crearUsuario');
- let nombredeUsuario = document.querySelector('#nombreUsuario');
+export let crearUsuario = document.querySelector('#crearUsuario');
+export  let nombredeUsuario = document.querySelector('#nombreUsuario');
 
- let errorNombre = document.querySelector('#errorNombre');
- let errorUsuario = document.querySelector('#errorUsuario');
- let errorEmpresa = document.querySelector('#errorEmpresa');
- let errorCUIT = document.querySelector('#errorCUIT');
- let errorMail = document.querySelector('#errorMail');
- let errorContraseña = document.querySelector('#errorContraseña');
- let errorVerifContraseña = document.querySelector('#errorVerificacion');
+export  let errorNombre = document.querySelector('#errorNombre');
+export  let errorUsuario = document.querySelector('#errorUsuario');
+export  let errorEmpresa = document.querySelector('#errorEmpresa');
+export  let errorCUIT = document.querySelector('#errorCUIT');
+export  let errorMail = document.querySelector('#errorMail');
+export let errorContraseña = document.querySelector('#errorContraseña');
+export  let errorVerifContraseña = document.querySelector('#errorVerificacion');
 
 errorNombre.style.display = 'none';
 errorUsuario.style.display = 'none';
@@ -36,7 +36,7 @@ errorVerifContraseña.style.display = 'none';
 
 crearUsuario.addEventListener('click', agregarUsuario);
 
- function agregarUsuario (event){
+export  function agregarUsuario (event){
     event.preventDefault();
 
 
@@ -98,7 +98,7 @@ crearUsuario.addEventListener('click', agregarUsuario);
     // console.log(usuario)
 }
 
- function agregarAllocalStorage2 (){
+export  function agregarAllocalStorage2 (){
     localStorage.setItem ("usuarios", JSON.stringify(usuarios)) 
 }
 
@@ -106,7 +106,7 @@ crearUsuario.addEventListener('click', agregarUsuario);
 
 // Funcion que valida solo texto y de longitud mayori igual a 1 
 
- const checkTextoMayorAUno = ( val )=>{
+export  const checkTextoMayorAUno = ( val )=>{
 
     if (/[a-zA-Z]+$/.test(val) && val.length >=1){
         return true
@@ -116,7 +116,7 @@ crearUsuario.addEventListener('click', agregarUsuario);
 }
 
 // Funcion validacion texto y numeros de 4 caracteres
- const checkTextoyNumero8Caract= ( val )=>{
+export  const checkTextoyNumero8Caract= ( val )=>{
 
     if (/[A-Za-z0-9]+$/.test(val) && val.length >=3 ){
         return true
@@ -126,7 +126,7 @@ crearUsuario.addEventListener('click', agregarUsuario);
 }
 
 // Función validacion de numeros sin guion
- const checkNumGuion= ( val )=>{
+export  const checkNumGuion= ( val )=>{
 
     if (/([0-9])+$/.test(val) && val.length >=10 ){
         return true
@@ -139,7 +139,7 @@ crearUsuario.addEventListener('click', agregarUsuario);
 
 
 
- const checkMail= ( val )=>{
+export  const checkMail= ( val )=>{
 
     if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(val)){
         return true
@@ -151,7 +151,7 @@ crearUsuario.addEventListener('click', agregarUsuario);
 }
 // Validación contraseña
 
- const checkContra= ( val )=>{
+export  const checkContra= ( val )=>{
 
 
     
@@ -241,7 +241,7 @@ password1.addEventListener ('input', (e) =>{
     
 })
 // Verificacion de contraseñas
- function verifContrasenia ( a ,b){
+export  function verifContrasenia ( a ,b){
 
     /*
     if (a==b){

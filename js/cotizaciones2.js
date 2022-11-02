@@ -75,10 +75,10 @@ export function cotizacionVial (event){
 
 function vialCheckbox (){
     let presupuesto = parseFloat( document.querySelector('#presupuestoVial').value);
-    verificacionNumero (presupuesto);
+    // verificacionNumero (presupuesto);
 
     let longitud = parseFloat ( document.querySelector('#longitud').value);
-    verificacionNumero (longitud);
+    // verificacionNumero (longitud);
 
     let fondos = document.querySelector('#eleccion-de-licitacion-vial').value;
 
@@ -139,15 +139,15 @@ export function cotizacionHidraulica(event){
     event.preventDefault()
 
     let presupuesto = parseFloat( document.querySelector('#presupuestoHidrico').value);
-    verificacionNumero (presupuesto);
+    // verificacionNumero (presupuesto);
 
     let cañerias = parseFloat ( document.querySelector('#cañerias').value);
 
-    verificacionNumero (cañerias)
+    // verificacionNumero (cañerias)
 
 
     let superficie = parseFloat( document.querySelector('#superficiePlanta').value);
-    verificacionNumero (superficie)
+    // verificacionNumero (superficie)
     let fondos = document.querySelector('#eleccion-de-licitacion-h').value;
 
 
@@ -155,7 +155,7 @@ export function cotizacionHidraulica(event){
     // let aCotizar = ([...checked].map(c=>c.value));
 
 
-    verifResto (presupuesto, cañerias, superficie ,fondos, checked,mensajeHidraulico)
+    verifHidraulica (presupuesto, cañerias, superficie ,fondos, checked,mensajeHidraulico)
     /*
     let terminado = aCotizar.forEach((element) => {
         if (element == "Anteproyecto Electromecanica"){
@@ -207,14 +207,14 @@ export function cotizacionCivil (event){
     event.preventDefault()
 
     let presupuesto =parseFloat (document.querySelector('#presupuestoCivil').value) ;
-    verificacionNumero ( presupuesto);
+    // verificacionNumero ( presupuesto);
     let pisos = parseInt( document.querySelector('#cantPisos').value);
-    verificacionNumero (pisos);
+    // verificacionNumero (pisos);
 
 
 
     let subsuelo = parseInt( document.querySelector('#cantSubsuelos').value) ;
-    verificacionNumerosConCero (subsuelo);
+    // verificacionNumerosConCero (subsuelo);
 
     let fondos = document.querySelector('#eleccion-de-licitacion-c').value;
 
@@ -223,7 +223,7 @@ export function cotizacionCivil (event){
 
 
     
-    verifResto (presupuesto, pisos, subsuelo ,fondos, checked,mensajeCivil)
+    verifCivil  (presupuesto, pisos, subsuelo ,fondos, checked,mensajeCivil)
     /*
     let terminado = aCotizar.forEach((element) => {
         if (element == "Anteproyecto movimiento de suelos"){
@@ -264,9 +264,17 @@ mensajeCotizaciones (mensajes,mensaje1, mensaje2);*/
 export function verificacionNumero (dato){
 /*
     if (isNaN (dato) ){
-        return alert ('Ingrese un número')
+        swal.fire({
+            title: 'Ingrese un número',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
     } else if ( dato <=0 ){
-        return alert ('Ingrese un número mayor a cero')
+        swal.fire({
+            title: 'El número ingresado debe ser mayor a cero',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
     }
 
 */
@@ -275,13 +283,22 @@ export function verificacionNumero (dato){
 
 
 export function verificacionNumerosConCero (dato){
-   /*
+/*
     if (isNaN (dato) ){
-        return alert ('Ingrese un número')
+        console.log(isNaN (dato))
+        swal.fire({
+            title: 'Ingrese un número',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
     } else if ( dato <0 ){
-        return alert ('Ingrese un número mayor a cero')
+        swal.fire({
+            title: 'El número ingresado debe ser mayor- igual a cero',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
     }
-    */
+*/
     isNaN (dato) ?  alert ('Ingrese un número') : dato <0 ?  alert ('Ingrese un número mayor a cero') : false
 }
 
@@ -321,6 +338,27 @@ function cotViejas (){
 
 /* Verif vial*/
 
+
+function verifVial (pre, long, fin, che){
+    if (  pre <=0 || long <=0 ){
+        swal.fire({
+            title: 'Ingresar valores mayor a cero',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
+    } else if (pre && long && fin && che){
+        mensajeVial (pre,long, fin,che)
+    } else {
+        swal.fire({
+            title: 'Completar todos los datos',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
+    }
+}
+
+/*
+
 function verifVial (pre, long, fin, che){
     if (pre && long && fin && che){
         mensajeVial (pre,long, fin,che)
@@ -332,11 +370,70 @@ function verifVial (pre, long, fin, che){
         });
     }
 }
+*/
+/* Verif Hid*/
 
-/* Verif Hid y civil*/
-function verifResto (pre, can, sup ,fin, che, verificacion){
+
+function verifHidraulica(pre, can, sup ,fin, che, verificacion){
+    if (pre <=0 || can <=0 || sup <=0){
+        swal.fire({
+            title: 'Ingresar valores mayor a cero',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
+    } else if (pre && can && sup && fin && che){
+        verificacion (pre,can,sup,fin)
+    } else {
+        swal.fire({
+            title: 'Complete todos los rangos',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+            });
+    }
+}
+
+/*
+function verifHidraulica (pre, can, sup ,fin, che, verificacion){
     if (pre && can && sup && fin && che){
         verificacion (pre,can,sup,fin)
+    } else {
+        swal.fire({
+        title: 'Complete todos los rangos',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+        });
+    }
+}
+*/
+/* Verif civil*/
+
+
+function verifCivil(pre, pi, sub ,fin, che, verificacion){
+    if (pre <=0 || pi <=0 || sub <=0){
+        swal.fire({
+            title: 'Ingresar valores mayor a cero',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
+    } else if (pre && pi && sub && fin && che){
+        verificacion (pre,pi,sub,fin)
+    } else {
+        swal.fire({
+            title: 'Complete todos los rangos',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+            });
+    }
+}
+
+
+
+
+
+/*
+function verifCivil (pre, pi, sub ,fin, che, verificacion){
+    if (pre && pi && sub && fin && che){
+        verificacion (pre,pi,sub)
     } else {
         swal.fire({
             title: 'Complete todos los rangos',
@@ -348,6 +445,6 @@ function verifResto (pre, can, sup ,fin, che, verificacion){
 
 
 
-
+*/
 
 
