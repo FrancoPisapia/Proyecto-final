@@ -304,16 +304,16 @@ export function mensajeCotizaciones (m,m1,m2){
 cotizacionesViejas.addEventListener('click', cotViejas);
 
 
-let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
 
 function cotViejas (){
-    // let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
+    let insertarCotizacionesRealizadas = document.querySelector("#insertarCotizacionesRealizadas")
     let cot = (JSON.parse(localStorage.getItem('cotizaciones')));
     cot.forEach ((element,index) => {
         insertarCotizacionesRealizadas.innerHTML += `<p class = 'hijos${index}'> ${index+1}-${element} </p>`
     })
     
 }
+
 
 
 /* Verif civi*/
