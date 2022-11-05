@@ -44,7 +44,18 @@ function formulario (e) {
         const candidato = new Candidatos (nombre, apellido, mail,info, ciudad,  dispositivo, telefono)
         candidatos.push(candidato)
         agregarAllocalStorage1 ()
-    } 
+        swal.fire({
+            title: 'Datos cargados correctamente',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+        });
+    } else {
+        swal.fire({
+            title: 'Complete todos los datos',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+        });
+    }
 
 }
 

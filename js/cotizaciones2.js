@@ -319,6 +319,8 @@ export function mensajeCotizaciones (m,m1,m2){
     agregarAllocalStorage (m)
 }
 
+
+
 cotizacionesViejas.addEventListener('click', cotViejas);
 
 

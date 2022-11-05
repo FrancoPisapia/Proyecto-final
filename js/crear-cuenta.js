@@ -69,8 +69,7 @@ export  function agregarUsuario (event){
             agregarAllocalStorage2 ()
             nombredeUsuario.innerHTML = nombreUsuario
             
-            console.log(usuarios)
-            console.log(usuario)
+
         } else {
             errorVerifContraseña.style.display = 'block';
             errorVerifContraseña.innerHTML = 'Las contraseñas deben ser iguales ' 
@@ -183,7 +182,7 @@ usuario.addEventListener ('input', (e) =>{
         errorUsuario.innerHTML = ''
     } else {
         errorUsuario.style.display = 'block';
-        errorUsuario.innerHTML = 'Debe ingresar 3 caracteres sin caracteres especiales'
+        errorUsuario.innerHTML = 'Debe ingresar 3 caracteres no especiales'
     }
 });
 
@@ -196,7 +195,7 @@ empresa.addEventListener ('input', (e) =>{
         errorEmpresa.innerHTML = ''
     } else {
         errorEmpresa.style.display = 'block';
-        errorEmpresa.innerHTML = 'Debe ingresar 3 caracteres sin caracteres especiales'
+        errorEmpresa.innerHTML = 'Debe ingresar 3 caracteres no especiales'
     }
 })
 
